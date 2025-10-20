@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>データの可視化 | マーケティング・データ分析補足資料</title>
+  <meta name="description" content="データの可視化 | マーケティング・データ分析補足資料" />
+  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="データの可視化 | マーケティング・データ分析補足資料" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta name="github-repo" content="https://github.com/tak-tag/mktg_analysis_comp.github.io" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="データの可視化 | マーケティング・データ分析補足資料" />
+  
+  
+  
+
+
+
+<meta name="date" content="2025-10-20" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="categoricalVar.html"/>
+<link rel="next" href="cor.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>本ウェブサイトについて</a></li>
+<li class="chapter" data-level="" data-path="rusage.html"><a href="rusage.html"><i class="fa fa-check"></i>R と R studioに慣れる</a>
+<ul>
+<li class="chapter" data-level="" data-path="ch2intro.html"><a href="ch2intro.html"><i class="fa fa-check"></i>本章の概要</a></li>
+<li class="chapter" data-level="" data-path="desktop.html"><a href="desktop.html"><i class="fa fa-check"></i>R studio デスクトップ版の利用</a></li>
+<li class="chapter" data-level="" data-path="project.html"><a href="project.html"><i class="fa fa-check"></i>プロジェクト機能について</a></li>
+<li class="chapter" data-level="" data-path="basics.html"><a href="basics.html"><i class="fa fa-check"></i>Rの基本操作</a></li>
+<li class="chapter" data-level="" data-path="rscript.html"><a href="rscript.html"><i class="fa fa-check"></i>R スクリプトのすゝめ</a>
+<ul>
+<li class="chapter" data-level="" data-path="rscript.html"><a href="rscript.html#writeRscript"><i class="fa fa-check"></i>Rスクリプトを書く</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="ch2summary.html"><a href="ch2summary.html"><i class="fa fa-check"></i>本章のまとめ</a></li>
+<li class="chapter" data-level="" data-path="positcloud.html"><a href="positcloud.html"><i class="fa fa-check"></i>コラム：Posit cloudを使ってみる</a></li>
+<li class="chapter" data-level="" data-path="ch2reference.html"><a href="ch2reference.html"><i class="fa fa-check"></i>参考文献</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="handling.html"><a href="handling.html"><i class="fa fa-check"></i>データ整理と要約・可視化</a>
+<ul>
+<li class="chapter" data-level="" data-path="Ch3intro.html"><a href="Ch3intro.html"><i class="fa fa-check"></i>本章の概要</a></li>
+<li class="chapter" data-level="" data-path="readData.html"><a href="readData.html"><i class="fa fa-check"></i>データの読み込み</a></li>
+<li class="chapter" data-level="" data-path="normalization.html"><a href="normalization.html"><i class="fa fa-check"></i>データの整形</a>
+<ul>
+<li class="chapter" data-level="" data-path=""><a href="#tidyverse-%E3%81%AE%E6%B4%BB%E7%94%A8"><i class="fa fa-check"></i>tidyverse の活用</a></li>
+<li class="chapter" data-level="" data-path="normalization.html"><a href="normalization.html#firmdata"><i class="fa fa-check"></i>企業データの処理</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="summary.html"><a href="summary.html"><i class="fa fa-check"></i>データの要約と可視化</a>
+<ul>
+<li class="chapter" data-level="" data-path="summary.html"><a href="summary.html#descriptiveStat"><i class="fa fa-check"></i>記述統計</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="categoricalVar.html"><a href="categoricalVar.html"><i class="fa fa-check"></i>カテゴリ変数の要約</a></li>
+<li class="chapter" data-level="" data-path="visualization.html"><a href="visualization.html"><i class="fa fa-check"></i>データの可視化</a></li>
+<li class="chapter" data-level="" data-path="cor.html"><a href="cor.html"><i class="fa fa-check"></i>二変数間の関係の要約</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AEch3reference"><i class="fa fa-check"></i>参考文献{ch3reference}</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">マーケティング・データ分析補足資料</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="visualization" class="section level2 hasAnchor">
+<h2>データの可視化<a href="visualization.html#visualization" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>本サイトでのデータの可視化では、主にtidyverse内に含まれる ggplot2 というパッケージを用いる。データの可視化では、円グラフ、折れ線グラフ、帯グラフなどの様々なグラフを用いて視覚化されることも多いだろう。しかしなが本節では、主にヒストグラム、箱ひげ図、バイオリンプロットをRでの実行例とともに紹介する。これらの図は、量的変数の分布を視覚的に示すことについて優れた可視化の方法だと言える。ここでは、ggplot2に内包されている diamonds データを用いて可視化を学ぶ（tidyverseを起動することで自動的に ggplot2も起動されるため、このタイミングでtidyverseを起動していない場合には、必要に応じて <code>library(tidyverse)</code> によってパッケージを起動してほしい）。diamonds データについては以下のように確認できる。</p>
+<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="visualization.html#cb103-1" tabindex="-1"></a><span class="fu">head</span>(diamonds)</span></code></pre></div>
+<pre><code>## # A tibble: 6 × 10
+##   carat cut       color clarity depth table price     x     y     z
+##   &lt;dbl&gt; &lt;ord&gt;     &lt;ord&gt; &lt;ord&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1  0.23 Ideal     E     SI2      61.5    55   326  3.95  3.98  2.43
+## 2  0.21 Premium   E     SI1      59.8    61   326  3.89  3.84  2.31
+## 3  0.23 Good      E     VS1      56.9    65   327  4.05  4.07  2.31
+## 4  0.29 Premium   I     VS2      62.4    58   334  4.2   4.23  2.63
+## 5  0.31 Good      J     SI2      63.3    58   335  4.34  4.35  2.75
+## 6  0.24 Very Good J     VVS2     62.8    57   336  3.94  3.96  2.48</code></pre>
+<p>なお、Macのデスクトップ版でggplot2等を使うと日本語が文字化けするので、Macユーザーは別途以下のコマンドを実行する必要がある。</p>
+<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="visualization.html#cb105-1" tabindex="-1"></a><span class="co">#For mac users</span></span>
+<span id="cb105-2"><a href="visualization.html#cb105-2" tabindex="-1"></a><span class="fu">theme_set</span>(<span class="fu">theme_gray</span>(<span class="at">base_size =</span> <span class="dv">10</span>, <span class="at">base_family =</span> <span class="st">&quot;HiraMinProN-W3&quot;</span>))</span></code></pre></div>
+<p>ここではまず、ggplot2の <code>ggplot()</code> 関数を用いて図示化のためのオブジェクトを作成する。この関数では、以下の引数を指定する。</p>
+<ul>
+<li>data: 可視化に用いるデータフレームの指定</li>
+<li>mapping: データから抽出する変数と画面に表示される図との関係の指定
+<ul>
+<li>mapping内で、<code>aes()</code> 関数（aesthetics）で視覚化に用いる変数とプロット要素間の接続を図ることも多い。</li>
+</ul></li>
+</ul>
+<p><code>aes()</code> 関数は、データ内の変数がをどのように視覚的情報（美的特性）にマッピングするか（例えば、x軸とy軸の変数はなにか）を特定するための関数である。こらの引数により、ggplot関数で作成された図示化オブジェクトには、着目するデータと変数が特定される。</p>
+<p>続いて、ggplot()で作られたオブジェクトに対して、geom (geometry) に関する情報を 追加し、グラフィックの層(layer)を加えることで図を作成する。このプロセスでは、<code>geom_point()</code> による散布図や、<code>geom_histogram()</code> によるヒストグラムなど、具体的な図表のタイプに対応する関数を利用することで、図を作成できる。また、geomに関する関数以降に <code>labs()</code> というラベルに関する関数を追加することで、図に必要な情報を加筆することが可能になる。</p>
+<p>ggplot2を用いたデータ可視化の例として、まずはヒストグラムを描画する。ヒストグラムはデータの分布を離散的に示すものであり、連続変数を階級で分けて各階級の頻度を図示化する。ヒストグラムは一つの変数を扱った図なので、mapping引数ではひとつの変数を指定する。その上で作成した図示化オブジェクトに <code>geom_histogram()</code> を追加することでヒストグラムを描画する。以下では、ダイアモンドの価格の観測頻度についての可視化例を紹介する。以下の図では、価格の程度を離散的に区切り、その区切られた各範囲の価格を取る観測がデータ内にどれだけ存在するかを示している。</p>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="visualization.html#cb106-1" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(diamonds, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> price))</span>
+<span id="cb106-2"><a href="visualization.html#cb106-2" tabindex="-1"></a>p1 <span class="sc">+</span> <span class="fu">geom_histogram</span>() <span class="sc">+</span></span>
+<span id="cb106-3"><a href="visualization.html#cb106-3" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;価格&quot;</span>, <span class="at">y =</span> <span class="st">&quot;頻度&quot;</span>,</span>
+<span id="cb106-4"><a href="visualization.html#cb106-4" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;ヒストグラム1: ダイアモンド価格&quot;</span>)</span></code></pre></div>
+<p><img src="02-datahandling_files/figure-html/histogram-1.png" width="672" /></p>
+<p>なお、縦軸を確率密度(density)に変えるときは、geom_density()を用いる。その際、fillという引数を設定すると、密度を範囲に色を塗ることができる (なお、“p1” というオブジェクトは再利用できるので、再びggplot()によって指定する必要はない)。</p>
+<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="visualization.html#cb107-1" tabindex="-1"></a>p1 <span class="sc">+</span> <span class="fu">geom_density</span>(<span class="at">fill =</span> <span class="st">&quot;black&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb107-2"><a href="visualization.html#cb107-2" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;価格&quot;</span>, <span class="at">y =</span> <span class="st">&quot;頻度&quot;</span>,</span>
+<span id="cb107-3"><a href="visualization.html#cb107-3" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;ヒストグラム2: ダイアモンド価格（geom_density）&quot;</span>)</span></code></pre></div>
+<p><img src="02-datahandling_files/figure-html/density-1.png" width="672" /></p>
+<p>次に、箱ひげ図の作り方を紹介する。箱ひげ図は、四分位数と四分位範囲等を図示化したものである。四分位数はデータを4等分する区切りの値であり、第一四分位はQ1、第二四分位はQ2、第三四分位はQ3、最大値はQ4で示される。四分位範囲はQ3-Q1の範囲で示されるものである。ここでは、Cutの質（Fair, Good, Very Good, Premium, Ideal）ごとに価格の分布を比べるため、複数の箱ひげ図を並べる例を提示する。</p>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="visualization.html#cb108-1" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(diamonds, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> cut, <span class="at">y =</span> price))</span>
+<span id="cb108-2"><a href="visualization.html#cb108-2" tabindex="-1"></a>p2 <span class="sc">+</span> <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb108-3"><a href="visualization.html#cb108-3" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Cutの質&quot;</span>, <span class="at">y =</span> <span class="st">&quot;価格&quot;</span>,</span>
+<span id="cb108-4"><a href="visualization.html#cb108-4" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;箱ひげ図1: ダイアモンド価格&quot;</span>)</span></code></pre></div>
+<p><img src="02-datahandling_files/figure-html/boxplot-1.png" width="672" /></p>
+<p>箱ひげ図を作成すると、ひげの上下に点が表示されることがある（上図では上部が太線のように見えている）。これは、外れ値の候補として全体の分布から離れて存在する観測値が示されている。ここで示される外れ値の候補は、Q1よりも四分位範囲<span class="math inline">\(\times 1.5\)</span> 以上小さい、ないしは、Q3よりも四分位範囲<span class="math inline">\(\times 1.5\)</span> 以上大きいかで特定される。外れ値がある場合、入力ミスなどのエラーではないか、異質な観測値でないか、を検討、確認することが必要になる。</p>
+<p>次に紹介する図のタイプはバイオリンプロットである。バイオリンプロットは、箱ひげ図よりももう少し詳しくデータの分布を確認できる図である。ggplot2では、<code>geom_violin()</code> を用いる。例えば、先程の箱ひげ図をバイオリンプロットで示すと、以下のようになる。以下の図は、バイオリンプロット内に箱ひげ図を示すことでよりわかりやすい図を作成するように工夫している。</p>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="visualization.html#cb109-1" tabindex="-1"></a>p2 <span class="sc">+</span> <span class="fu">geom_violin</span>() <span class="sc">+</span></span>
+<span id="cb109-2"><a href="visualization.html#cb109-2" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">fill =</span> <span class="st">&quot;gray&quot;</span>, <span class="at">width =</span> <span class="fl">0.1</span>) <span class="sc">+</span></span>
+<span id="cb109-3"><a href="visualization.html#cb109-3" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Cutの質&quot;</span>, <span class="at">y =</span> <span class="st">&quot;価格&quot;</span>,</span>
+<span id="cb109-4"><a href="visualization.html#cb109-4" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;バイオリンプロット: ダイアモンド価格&quot;</span>)</span></code></pre></div>
+<p><img src="02-datahandling_files/figure-html/ciolin-1.png" width="672" /></p>
+<p>バイオリンプロットで横に広がっているところは、ヒストグラムで言う山が高いところを意味しており、そこに多くのデータが集まっていることを示している。</p>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="categoricalVar.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="cor.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/USERNAME/REPO/edit/BRANCH/02-datahandling.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection",
+    "scroll_highlight": true
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

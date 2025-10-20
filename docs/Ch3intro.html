@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="rusage.html"/>
-<link rel="next" href="desktop.html"/>
+<link rel="prev" href="handling.html"/>
+<link rel="next" href="readData.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -187,25 +187,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="ch2intro" class="section level2 hasAnchor">
-<h2>本章の概要<a href="ch2intro.html#ch2intro" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>本章では、統計分析ソフトウェアR（あーる）と R Studio の概要および使い方について説明する。本書では特に、R Studio と呼ばれるアプリケーションを活用した分析を想定する。さらに本章ではR Studio で活用できるプロジェクト機能を活用することを強く推奨する。本章の内容を参考に、R Studioを用いたデータ分析を行うための実行環境を整えてほしい。</p>
-<p>R は統計、データ解析、統計グラフ作成のためのオープンソースソフトウェアである。なお、Rを用いる際には、多くの場合) R studio、Jupyter notebookや、Rコマンダーのようなユーザーインターフェイスが利用される。そしてRを使用する際には (Rコマンダーを使わないかぎりは) 基本的にソースコードを入力し計算、分析を行う。Rを用いる際に最もよく使われる環境（アプリケーション）のひとつがR studioであり、本書においても基本的にはR studioを用いることを前提とするが、R studioをデスクトップにインストールし利用する場合には、Rそのものもインストールしておく必要があることに注意が必要である。R studioは現在、Positとも呼ばれており、以下のサイトからダウンロードが可能である（<a href="https://posit.co/download/rstudio-desktop/" class="uri">https://posit.co/download/rstudio-desktop/</a>）<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>。このリンクにアクセスし、自身の環境に適したRStudio Desktop ソフトウェアの実行ファイルやディスクイメージファイルをダウンロードしてほしい。そしてファイルをダウンロードしたら、それを開くことで表示されるインストーラーの手順に従い、RStudioをダウンロードしてほしい。</p>
-<p>また本書では、Posit Cloudという、アカウント登録を行うことでブラウザ上でR studioを利用できる環境も紹介する。R studio Desktop版 の利用においては、データの所在地（ディレクトリ）設定などによってエラーが生じることが多々あり、個別のPC環境に合わせて対応、設定を行う必要がある。そのため、まとまった人数に対応する必要がある講義で R studio を活用する場合や、R studio のインストールに苦労する初学者においてはまずPosit cloud と呼ばれるクラウド版を利用し、本書で紹介するような分析作業になれることを勧める。しかし、Posit cloud のフリーアカウントには、利用可能な時間やデータ容量に制限があるため、自身の研究や仕事等でデータ処理や分析を行う場合にはR studio デスクトップ版（通常はR studio IDEのフリーバージョンで十分）をインストールし、利用してほしい。</p>
-</div>
-<div class="footnotes">
-<hr />
-<ol start="1">
-<li id="fn1"><p>なお、Posit社のウェブサイトの構成は時期によって変化する可能性がある。もし、RStudio Desktopのダウンロードサイトが見当たらないときにはPosit ウェブサイト内で “Rstudio” と検索してほしい<a href="ch2intro.html#fnref1" class="footnote-back">↩︎</a></p></li>
-</ol>
+<div id="Ch3intro" class="section level2 hasAnchor">
+<h2>本章の概要<a href="Ch3intro.html#Ch3intro" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>本章では、Rを用いたデータの処理と記述的な分析について紹介する。マーケティング領域では、様々なタイプのデータを扱うが、どのようなデータであってもデータを取り込み、分析可能な形に処理した後、データの特徴について確認することが必要になる。最終的に高度な統計分析を行うことを想定していたとしても、自身の獲得したデータの特徴を確認することは非常に重要である。そのため、本章ではデータの読み込みやデータ処理といった、分析の前に必要な技術的過程を紹介する。</p>
+<p>データセットの構築が完了したあとは、分析を行うのだが、本章ではRを通じて実行可能な基本的なデータ分析手法を紹介する。Rには、様々な計算を実行するための関数が用意されており（例、mean, median, sqrt 等）、これらを使えば、分析者はシンプルなコマンドで分析が可能になる。関数のは <code>f(argument)</code> のように関数名 <code>f</code> のあとにカッコをつけて表記することで利用する事ができる。なお、<code>argument</code> は日本では引数とよばれ、計算に必要な情報の指定である。関数の利用において作業者は具体的な関数名とそれに対応する引数を指定する必要がある。例えば、データ（列ベクトル）<code>x</code> の平均値を計算したい場合には、以下のようなコマンドで実行できる。</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="Ch3intro.html#cb48-1" tabindex="-1"></a><span class="fu">mean</span>(x)</span></code></pre></div>
+<p>ただし、 <code>na.rm = TRUE</code> はデータに欠損値がある場合に、それを無視して（欠損値でない観測値のみで）計算を行うための引数である。</p>
+<p>Rの作業として本章では主に、1. データの読み込み（csv, excel, etc.）、2. dplyrの利用とデータ整形、3. パイプ演算子を用いた複数処理の実行、について学ぶ。なお、これらの作業は、統計的な分析を実行する前のデータ前処理としても広く使われるものなので、データ分析をしたいと考える人達にとってはとても重要なスキルになる。</p>
+<p>分析可能な形にデータを処理した後は、データの特徴を確認することが必要になる。具体的には、記述統計や図示化を用いて、特定の変数の分布や変数間の関係について確認を行うことが重要である。この過程により、調査の背景にある実情を把握できるとともに、入手したデータ（のコーディングなど）にエラーがないかを確認することにもつながる。本章では、関数を用いた基本的な記述統計の計算はもちろん、先述のパイプ演算子を用いて、ある特徴を持つ観測における記述統計の計算などを簡単に行う方法も紹介する。</p>
+<p>また、二変数間の関係を捉えるための基本的な指標である相関係数についても説明する。そこでは、相関係数の意味や係数の解釈における注意点についても紹介した後、データを可視化することの重要性も合わせて説明する。データの可視化においては主に、ggplot2 というパッケージを用いた方法を紹介する。本章では主にRパッケージ内に含まれているデータ例を用いて、可視化の方法を紹介するため、読者においてはぜひ自身の関心のあるデータを用いて実行してみてほしい。</p>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="rusage.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="desktop.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="handling.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="readData.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -236,7 +234,7 @@ gitbook.start({
     "size": 2
   },
   "edit": {
-    "link": "https://github.com/USERNAME/REPO/edit/BRANCH/01-Rusage.Rmd",
+    "link": "https://github.com/USERNAME/REPO/edit/BRANCH/02-datahandling.Rmd",
     "text": "Edit"
   },
   "history": {

@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>本章の概要 | マーケティング・データ分析補足資料</title>
-  <meta name="description" content="本章の概要 | マーケティング・データ分析補足資料" />
+  <title>データ整理と要約・可視化 | マーケティング・データ分析補足資料</title>
+  <meta name="description" content="データ整理と要約・可視化 | マーケティング・データ分析補足資料" />
   <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="本章の概要 | マーケティング・データ分析補足資料" />
+  <meta property="og:title" content="データ整理と要約・可視化 | マーケティング・データ分析補足資料" />
   <meta property="og:type" content="book" />
   
   
   <meta name="github-repo" content="https://github.com/tak-tag/mktg_analysis_comp.github.io" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="本章の概要 | マーケティング・データ分析補足資料" />
+  <meta name="twitter:title" content="データ整理と要約・可視化 | マーケティング・データ分析補足資料" />
   
   
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="rusage.html"/>
-<link rel="next" href="desktop.html"/>
+<link rel="prev" href="ch2reference.html"/>
+<link rel="next" href="Ch3intro.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -187,25 +187,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="ch2intro" class="section level2 hasAnchor">
-<h2>本章の概要<a href="ch2intro.html#ch2intro" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>本章では、統計分析ソフトウェアR（あーる）と R Studio の概要および使い方について説明する。本書では特に、R Studio と呼ばれるアプリケーションを活用した分析を想定する。さらに本章ではR Studio で活用できるプロジェクト機能を活用することを強く推奨する。本章の内容を参考に、R Studioを用いたデータ分析を行うための実行環境を整えてほしい。</p>
-<p>R は統計、データ解析、統計グラフ作成のためのオープンソースソフトウェアである。なお、Rを用いる際には、多くの場合) R studio、Jupyter notebookや、Rコマンダーのようなユーザーインターフェイスが利用される。そしてRを使用する際には (Rコマンダーを使わないかぎりは) 基本的にソースコードを入力し計算、分析を行う。Rを用いる際に最もよく使われる環境（アプリケーション）のひとつがR studioであり、本書においても基本的にはR studioを用いることを前提とするが、R studioをデスクトップにインストールし利用する場合には、Rそのものもインストールしておく必要があることに注意が必要である。R studioは現在、Positとも呼ばれており、以下のサイトからダウンロードが可能である（<a href="https://posit.co/download/rstudio-desktop/" class="uri">https://posit.co/download/rstudio-desktop/</a>）<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>。このリンクにアクセスし、自身の環境に適したRStudio Desktop ソフトウェアの実行ファイルやディスクイメージファイルをダウンロードしてほしい。そしてファイルをダウンロードしたら、それを開くことで表示されるインストーラーの手順に従い、RStudioをダウンロードしてほしい。</p>
-<p>また本書では、Posit Cloudという、アカウント登録を行うことでブラウザ上でR studioを利用できる環境も紹介する。R studio Desktop版 の利用においては、データの所在地（ディレクトリ）設定などによってエラーが生じることが多々あり、個別のPC環境に合わせて対応、設定を行う必要がある。そのため、まとまった人数に対応する必要がある講義で R studio を活用する場合や、R studio のインストールに苦労する初学者においてはまずPosit cloud と呼ばれるクラウド版を利用し、本書で紹介するような分析作業になれることを勧める。しかし、Posit cloud のフリーアカウントには、利用可能な時間やデータ容量に制限があるため、自身の研究や仕事等でデータ処理や分析を行う場合にはR studio デスクトップ版（通常はR studio IDEのフリーバージョンで十分）をインストールし、利用してほしい。</p>
-</div>
-<div class="footnotes">
-<hr />
-<ol start="1">
-<li id="fn1"><p>なお、Posit社のウェブサイトの構成は時期によって変化する可能性がある。もし、RStudio Desktopのダウンロードサイトが見当たらないときにはPosit ウェブサイト内で “Rstudio” と検索してほしい<a href="ch2intro.html#fnref1" class="footnote-back">↩︎</a></p></li>
-</ol>
+<div id="handling" class="section level1 hasAnchor">
+<h1>データ整理と要約・可視化<a href="handling.html#handling" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="rusage.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="desktop.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="ch2reference.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="Ch3intro.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -236,7 +227,7 @@ gitbook.start({
     "size": 2
   },
   "edit": {
-    "link": "https://github.com/USERNAME/REPO/edit/BRANCH/01-Rusage.Rmd",
+    "link": "https://github.com/USERNAME/REPO/edit/BRANCH/02-datahandling.Rmd",
     "text": "Edit"
   },
   "history": {
