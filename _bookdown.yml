@@ -1,0 +1,6 @@
+book_filename: "mkt_analysis_comp"
+output_dir: "docs"
+new_session: yes
+language:
+  ui:
+    chapter_name: ""

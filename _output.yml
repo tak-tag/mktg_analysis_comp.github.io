@@ -1,0 +1,11 @@
+bookdown::gitbook:
+  split_by: section
+  css: style.css
+  number_sections: false
+  config:
+    toc:
+      collapse: subsection
+      scroll_highlight: true
+      before: null
+      after: null
+    edit: https://github.com/USERNAME/REPO/edit/BRANCH/%s
