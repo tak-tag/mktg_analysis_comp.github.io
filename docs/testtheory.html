@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>統計的仮説検定 | マーケティング・データ分析補足資料</title>
+  <meta name="description" content="統計的仮説検定 | マーケティング・データ分析補足資料" />
+  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="統計的仮説検定 | マーケティング・データ分析補足資料" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta name="github-repo" content="https://github.com/tak-tag/mktg_analysis_comp.github.io" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="統計的仮説検定 | マーケティング・データ分析補足資料" />
+  
+  
+  
+
+
+
+<meta name="date" content="2025-11-06" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="intinf.html"/>
+<link rel="next" href="meancomparison.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>本ウェブサイトについて</a></li>
+<li class="chapter" data-level="" data-path="rusage.html"><a href="rusage.html"><i class="fa fa-check"></i>R と R studioに慣れる</a>
+<ul>
+<li class="chapter" data-level="" data-path="ch2intro.html"><a href="ch2intro.html"><i class="fa fa-check"></i>本章の概要</a></li>
+<li class="chapter" data-level="" data-path="desktop.html"><a href="desktop.html"><i class="fa fa-check"></i>R studio デスクトップ版の利用</a></li>
+<li class="chapter" data-level="" data-path="project.html"><a href="project.html"><i class="fa fa-check"></i>プロジェクト機能について</a></li>
+<li class="chapter" data-level="" data-path="basics.html"><a href="basics.html"><i class="fa fa-check"></i>Rの基本操作</a></li>
+<li class="chapter" data-level="" data-path="rscript.html"><a href="rscript.html"><i class="fa fa-check"></i>R スクリプトのすゝめ</a>
+<ul>
+<li class="chapter" data-level="" data-path="rscript.html"><a href="rscript.html#writeRscript"><i class="fa fa-check"></i>Rスクリプトを書く</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="ch2summary.html"><a href="ch2summary.html"><i class="fa fa-check"></i>本章のまとめ</a></li>
+<li class="chapter" data-level="" data-path="positcloud.html"><a href="positcloud.html"><i class="fa fa-check"></i>コラム：Posit cloudを使ってみる</a></li>
+<li class="chapter" data-level="" data-path="ch2reference.html"><a href="ch2reference.html"><i class="fa fa-check"></i>参考文献</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="handling.html"><a href="handling.html"><i class="fa fa-check"></i>データ整理と要約・可視化</a>
+<ul>
+<li class="chapter" data-level="" data-path="Ch3intro.html"><a href="Ch3intro.html"><i class="fa fa-check"></i>本章の概要</a></li>
+<li class="chapter" data-level="" data-path="readData.html"><a href="readData.html"><i class="fa fa-check"></i>データの読み込み</a></li>
+<li class="chapter" data-level="" data-path="normalization.html"><a href="normalization.html"><i class="fa fa-check"></i>データの整形</a>
+<ul>
+<li class="chapter" data-level="" data-path=""><a href="#tidyverse-%E3%81%AE%E6%B4%BB%E7%94%A8"><i class="fa fa-check"></i>tidyverse の活用</a></li>
+<li class="chapter" data-level="" data-path="normalization.html"><a href="normalization.html#firmdata"><i class="fa fa-check"></i>企業データの処理</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="summary.html"><a href="summary.html"><i class="fa fa-check"></i>データの要約と可視化</a>
+<ul>
+<li class="chapter" data-level="" data-path="summary.html"><a href="summary.html#descriptiveStat"><i class="fa fa-check"></i>記述統計</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="categoricalVar.html"><a href="categoricalVar.html"><i class="fa fa-check"></i>カテゴリ変数の要約</a></li>
+<li class="chapter" data-level="" data-path="visualization.html"><a href="visualization.html"><i class="fa fa-check"></i>データの可視化</a></li>
+<li class="chapter" data-level="" data-path="cor.html"><a href="cor.html"><i class="fa fa-check"></i>二変数間の関係の要約</a></li>
+<li class="chapter" data-level="" data-path="ch3reference.html"><a href="ch3reference.html"><i class="fa fa-check"></i>参考文献</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="test.html"><a href="test.html"><i class="fa fa-check"></i>基礎統計学復習</a>
+<ul>
+<li class="chapter" data-level="" data-path="ch4Intro.html"><a href="ch4Intro.html"><i class="fa fa-check"></i>本章の概要</a></li>
+<li class="chapter" data-level="" data-path="probability.html"><a href="probability.html"><i class="fa fa-check"></i>確率モデル、期待値と分散</a>
+<ul>
+<li class="chapter" data-level="" data-path="probability.html"><a href="probability.html#discrete"><i class="fa fa-check"></i>確率と離散確率変数</a></li>
+<li class="chapter" data-level="" data-path="probability.html"><a href="probability.html#continuous"><i class="fa fa-check"></i>連続確率変数</a></li>
+<li class="chapter" data-level="" data-path="probability.html"><a href="probability.html#expectation"><i class="fa fa-check"></i>期待値</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="inference.html"><a href="inference.html"><i class="fa fa-check"></i>統計的推測</a></li>
+<li class="chapter" data-level="" data-path="pestimate.html"><a href="pestimate.html"><i class="fa fa-check"></i>点推定</a></li>
+<li class="chapter" data-level="" data-path="estimates.html"><a href="estimates.html"><i class="fa fa-check"></i>推定量もまた確率変数</a></li>
+<li class="chapter" data-level="" data-path="distribution.html"><a href="distribution.html"><i class="fa fa-check"></i>補足（いくつかの確率分布の関係性）</a>
+<ul>
+<li class="chapter" data-level="" data-path=""><a href="#%E6%AD%A3%E8%A6%8F%E5%88%86%E5%B8%83"><i class="fa fa-check"></i>正規分布</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#%E3%82%AB%E3%82%A4%E4%BA%8C%E4%B9%97%E5%88%86%E5%B8%83"><i class="fa fa-check"></i>カイ二乗分布</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#t%E5%88%86%E5%B8%83"><i class="fa fa-check"></i>t分布</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#f%E5%88%86%E5%B8%83"><i class="fa fa-check"></i>F分布</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="intinf.html"><a href="intinf.html"><i class="fa fa-check"></i>区間推定</a>
+<ul>
+<li class="chapter" data-level="" data-path=""><a href="#%E6%A8%99%E6%BA%96%E6%AD%A3%E8%A6%8F%E5%88%86%E5%B8%83%E3%81%AB%E5%9F%BA%E3%81%A5%E3%81%8F%E4%BF%A1%E9%A0%BC%E5%8C%BA%E9%96%93%E3%81%AE%E6%B1%82%E3%82%81%E6%96%B9"><i class="fa fa-check"></i>標準正規分布に基づく信頼区間の求め方*</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#t%E5%88%86%E5%B8%83%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%9F%E5%8C%BA%E9%96%93%E6%8E%A8%E5%AE%9A"><i class="fa fa-check"></i>t分布を使った区間推定*</a></li>
+<li class="chapter" data-level="" data-path="intinf.html"><a href="intinf.html#infwithR"><i class="fa fa-check"></i>Rによる区間推定</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="testtheory.html"><a href="testtheory.html"><i class="fa fa-check"></i>統計的仮説検定</a>
+<ul>
+<li class="chapter" data-level="" data-path="testtheory.html"><a href="testtheory.html#nullhypo"><i class="fa fa-check"></i>検定の手順と仮説</a></li>
+<li class="chapter" data-level="" data-path="testtheory.html"><a href="testtheory.html#twotail"><i class="fa fa-check"></i>母平均の検定（両側検定）に関する理屈</a></li>
+<li class="chapter" data-level="" data-path="testtheory.html"><a href="testtheory.html#onetail"><i class="fa fa-check"></i>片側検定の紹介</a></li>
+<li class="chapter" data-level="" data-path="testtheory.html"><a href="testtheory.html#errors"><i class="fa fa-check"></i>有意水準と検定における誤り</a></li>
+<li class="chapter" data-level="" data-path="testtheory.html"><a href="testtheory.html#testresults"><i class="fa fa-check"></i>検定結果に関する解釈</a></li>
+<li class="chapter" data-level="" data-path="testtheory.html"><a href="testtheory.html#lightbulb"><i class="fa fa-check"></i>電球データと検定</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="meancomparison.html"><a href="meancomparison.html"><i class="fa fa-check"></i>平均値に関するその他の検定</a></li>
+<li class="chapter" data-level="" data-path="ANOVA.html"><a href="ANOVA.html"><i class="fa fa-check"></i>分散分析</a>
+<ul>
+<li class="chapter" data-level="" data-path=""><a href="#%E5%88%86%E6%95%A3%E5%88%86%E6%9E%90%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%81%AE%E3%83%A2%E3%83%87%E3%83%AB%E8%A1%A8%E7%8F%BEanoatheory"><i class="fa fa-check"></i>分散分析についてのモデル表現*{#ANOAtheory}</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#%E4%BA%8C%E5%85%83%E9%85%8D%E7%BD%AE%E5%88%86%E6%95%A3%E5%88%86%E6%9E%90twowayanoa"><i class="fa fa-check"></i>二元配置分散分析*{#twowayANOA}</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#%E4%BA%8C%E5%85%83%E9%85%8D%E7%BD%AE%E3%83%A2%E3%83%87%E3%83%AB%E3%81%AE%E5%8A%B9%E6%9E%9C%E6%A4%9C%E5%AE%9Atwowaytest"><i class="fa fa-check"></i>二元配置モデルの効果検定*{#twowaytest}</a></li>
+<li class="chapter" data-level="" data-path="ANOVA.html"><a href="ANOVA.html#tukey"><i class="fa fa-check"></i>多重比較とそれに伴う統計的問題</a></li>
+<li class="chapter" data-level="" data-path="ANOVA.html"><a href="ANOVA.html#ANOVAwithR"><i class="fa fa-check"></i>Rによる分散分析の実行</a></li>
+<li class="chapter" data-level="" data-path="ANOVA.html"><a href="ANOVA.html#ANOVAandReg"><i class="fa fa-check"></i>回帰分析と分散分析の関係</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="pwr.html"><a href="pwr.html"><i class="fa fa-check"></i>検定力分析とサンプルサイズ</a></li>
+<li class="chapter" data-level="" data-path="ch4reference.html"><a href="ch4reference.html"><i class="fa fa-check"></i>参考文献</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">マーケティング・データ分析補足資料</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="testtheory" class="section level2 hasAnchor">
+<h2>統計的仮説検定<a href="testtheory.html#testtheory" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="nullhypo" class="section level3 hasAnchor">
+<h3>検定の手順と仮説<a href="testtheory.html#nullhypo" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>データを用いた研究では、統計的分析によって提示した仮説が支持できるか否かを判断したい場合もある。その時に用いられる方法が統計的仮説検定である。本節ではまず検定の手順について説明したあと、分析結果の意味や解釈について説明する。統計的仮説検定は、基本的に以下の手順によって実施される。</p>
+<ol style="list-style-type: decimal">
+<li><p>仮説（帰無仮説・対立仮説）を設ける。</p></li>
+<li><p>仮説を検定するための統計量を選ぶ。</p></li>
+<li><p>有意確率を定め、統計量の値について有意確率に基づく臨界値を設定する。</p></li>
+<li><p>帰無仮説が正しいと仮定した上で統計量を計算し、その値が棄却域と採択域のどちらの領域に入るかを分析する。</p></li>
+</ol>
+<p>統計的仮説検定でも「仮説」という言葉が重要な役割を占める。ただし、ここで重要になるのは帰無仮説と対立仮説である。用語による誤解を避け、理解を容易にするために、<a href="#design"><strong>??</strong></a>章で議論した研究上着目する変数間の関係に関する予測（仮説）を「作業仮説」と呼ぶことにする。作業仮説は、リサーチクエスチョンに答えるための論理的予測である。例えば、「女性に比べ男性の方が新製品購買意図が高い」のようなものが作業仮説である。このような仮説を検証する場合、男女（グループ）間で購買意図の平均値を比較することが現実的な分析方法として考えられる。</p>
+<p>帰無仮説と対立仮説は、統計的仮説検定の基準になる「母集団の統計的特徴に関する仮説」であり、検定という手続き上ではこれらの仮説に着目する。特に、帰無仮説は、統計的仮説検定の考察、分析の基準となる仮説であり、この仮説を棄却（否定）できるか否かを調べることが基本的な統計的仮説検定の枠組みだと言える。帰無仮説は棄却しうる仮説であり、<span class="math inline">\(\small H_0\)</span> という記号で表される事が多い。また、多くの場合において「差がない」「効果がない（0である）」や「特定の値と等しい」といった仮説が設計される。一方で対立仮説は、帰無仮説とは排反な仮説で、帰無仮説が棄却された際に採用される推測であり、<span class="math inline">\(\small H_1\)</span>や<span class="math inline">\(\small　H_a\)</span>という記号で表される。データ分析を用いた研究においては対立仮説と作業仮説は論理的に整合的ないしは等しいことが好ましい。つまり、作業仮説という研究上重要な論理的推測を統計的に検証するためには、その作業仮説とは排反な帰無仮説を設計し統計的仮説検定を実施する必要がある。それによってもしその帰無仮説が棄却されたならば、対立仮説ひいては作業仮説がデータ分析によって支持されたと解釈することが可能になる。</p>
+<p>先述の男女間の購買意図の差に関する作業仮説について、男性における購買意図の期待値を <span class="math inline">\(\small \mu_m\)</span>、女性における購買意図の期待値を <span class="math inline">\(\small \mu_f\)</span>とすると、帰無仮説と対立仮説は以下のように示すことができる。</p>
+<ul>
+<li><span class="math inline">\(H_0:~\mu_m=\mu_f\)</span></li>
+<li><span class="math inline">\(H_1:~\mu_m\neq\mu_f\)</span></li>
+</ul>
+<p><span class="math inline">\(\small H_0\)</span> は、男性における購買意図の期待値と女性における期待値が等しいというものであり、 <span class="math inline">\(\small H_1\)</span>はそれらが等しくないということを示している。そのため上記の二つの仮説は、どちらも未知パラメータについての関係を捉えており、<span class="math inline">\(\small H_0\)</span> と <span class="math inline">\(\small H_1\)</span> は互いに排反であることがわかる。その上で、もし帰無仮説が棄却され、男性の平均値のほうが女性よりも高い場合には、作業仮説が支持されたと解釈することができる。つまり統計的な検定においては、作業仮説として提示している推測を直接検証するのではなく、作業仮説と排反な帰無仮説を設計し、それが棄却されるならば暫定的に作業仮説の主張を支持しようという立場で検証を行う。なお対立仮説として<span class="math inline">\(\small H_1:~\mu_m&gt;\mu_f\)</span> を設定することも可能である。このような仮説に基づく検定方法は片側検定と呼ばれ、その詳細については後述する。</p>
+<p>ここで改めて、より一般的な形でマーケティングリサーチで用いられる仮説と検定で用いられる仮説との関係を整理する。</p>
+<ul>
+<li>分析上の基準である帰無仮説は何かをきちんと理解し定義する。</li>
+<li>それが棄却された際にはどのような結論（対立仮説）が採用されるのかを理解する。</li>
+<li>そしてその結論が自身の立てた作業仮説と帰無仮説・対立仮説の関係が整合的かを考える。</li>
+</ul>
+<p>言い換えると、自身の立てた作業仮説を帰無仮説・対立仮説の対比という分析手続きで証明できるような調査・分析法を採用する必要がある。ただし、マーケティング領域におけるレポートや論文では、帰無仮説・対立仮説を記載せず、作業仮説のみを記載することが多い。</p>
+</div>
+<div id="twotail" class="section level3 hasAnchor">
+<h3>母平均の検定（両側検定）に関する理屈<a href="testtheory.html#twotail" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>ここで改めて、標準正規分布を用いた母平均に着目し、統計的仮説検定に関する一般的な説明を提示する。<span class="math inline">\(\small X_1,..,X_n\)</span> を正規母集団 <span class="math inline">\(N(\mu, \sigma^2)\)</span> からのサンプルサイズ <em>n</em> の無作為標本とする。このとき、帰無仮説のもとでのパラメータの値を<span class="math inline">\(\mu_0\)</span>として、以下の帰無仮説と対立仮説を設計する。</p>
+<p><span class="math display">\[
+H_0:~\mu=\mu_0,~~~H_1:~\mu\neq\mu_0
+\]</span></p>
+<p>このとき、<a href="intinf.html#intinf"><strong>??</strong></a>節の信頼区間の説明でも述べた通り、正規分布に従う母集団からの無作為標本 <span class="math inline">\(\small X_1,...,X_n\)</span> の標本平均は以下の分布に従うことがわかっている<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a>。</p>
+<p><span class="math display">\[
+\bar{X}\sim N\left(\mu,\frac{\sigma^2}{n}\right)
+\]</span></p>
+<p>また、これまでの議論の通り、<span class="math inline">\(\small \bar{X}\)</span>を標準化した統計量<em>Z</em>は以下の分布に従うことが知られている。</p>
+<p><span class="math display">\[
+Z=\frac{\bar{X}-\mu}{\sqrt{\sigma^2/n}}\sim N(0,1)
+\]</span>
+統計的仮説検定においては、この標準化された統計量を検定統計量（検定に用いる統計量）として用いて計算を行うのだが、我々の関心の中心でもある <span class="math inline">\(\small \mu\)</span> は未知であり、通常この統計量を計算することはできない。すなわち、未知であるパラメーターを何かしらの値で代替しなければ、上記の検定統計量は計算できない。そこで、統計的な仮説検定では、「帰無仮説が正しいと一旦仮定」した上で統計量を計算するというプロセスを経る。言い換えると、未知のパラメーターについて帰無仮説で示されている値を代入することで、検定統計量を計算可能にする。したがって、検定統計量 <em>Z</em> を以下のように定義する。</p>
+<p><span class="math display">\[
+Z=\frac{\bar{X}-\mu_0}{\sqrt{\sigma^2/n}}
+\]</span>
+そして、もし「帰無仮説が正しければ」<em>Z</em>は標準正規分布に従うはずであり、言い換えると <em>Z</em> の計算結果は0に近い値を取る可能性が高いはずである。そこで、この <em>Z</em> を計算し、<span class="math inline">\(\small |Z|\)</span> がある閾値 <em>c</em> よりも大きい（十分に0から離れている）場合には帰無仮説を棄却する。なお、ここで用いる閾値 <em>c</em> のことを一般的に臨界値と呼ぶ。つまり、検定統計量 <em>Z</em> の計算結果に対して、以下の方針で仮説検定を行う。</p>
+<p><span class="math display">\[
+\begin{cases}
+|Z|&gt;c &amp; \Rightarrow \text{H0を棄却する。}\\
+|Z|\leq c &amp; \Rightarrow \text{H0を採択する。}
+\end{cases}
+\]</span></p>
+<p>臨界値 <em>c</em> の求め方は区間推定と同様、分析に対応する確率分布（今回であれば標準正規分布）に基づくある区間の確率計算で求まる。研究者はまず、任意の確率 <span class="math inline">\(\small \alpha\)</span> を決める。この確率は「有意水準（significance level）」と呼ばれ、この有意水準と標準正規分布に基づく確率計算によって臨界値（下図内では <span class="math inline">\(\small \pm z_{\alpha/2}\)</span>）を求める。その上で、統計量の計算結果が臨界値より外側（下図における斜線部）にある場合には帰無仮説を棄却する。そのため、斜線部のような領域を棄却域、確率 <span class="math inline">\(\small 1-\alpha\)</span> に対応する範囲を採択域と一般に呼ぶ。</p>
+<div class="figure"><span style="display:block;" id="fig:ztest"></span>
+<img src="stat/ztest_twotails.png" alt="臨界値と確率計算" width="1322" />
+<p class="caption">
+Figure 1: 臨界値と確率計算
+</p>
+</div>
+<p>今回の場合、有意水準 <span class="math inline">\(\small \alpha\)</span> に基づく両側臨界値 <span class="math inline">\(\pm z_{\alpha/2}\)</span> を設定し、以下の方式で検定する。</p>
+<p><span class="math display">\[
+\begin{cases}
+|Z|&gt;z_{\alpha/2} &amp; \Rightarrow \text{H0を棄却する。}\\
+|Z|\leq z_{\alpha/2} &amp; \Rightarrow \text{H0を採択する。}
+\end{cases}
+\]</span></p>
+</div>
+<div id="onetail" class="section level3 hasAnchor">
+<h3>片側検定の紹介<a href="testtheory.html#onetail" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>ここまでの議論では対立仮説を <span class="math inline">\(H_1:~\mu\neq\mu_0\)</span> とし、左右対称の分布の両端に棄却域を設定した。このような検定方法を一般的に両側検定と呼ぶ。しかし、現実的ないしは理論的な根拠をもとに、ある値よりも高い（もしくは低い）ことが事前に予測できる場合がある。その場合には、例えば <span class="math inline">\(\small \mu&gt;\mu_0\)</span> や <span class="math inline">\(\small \mu&lt;\mu_0\)</span>といった対立仮説を設定することも可能である。このような対立仮説を利用した検定方法を一般的に片側検定と呼ぶ。ここでは、仮に<span class="math inline">\(\small \mu&gt;\mu_0\)</span>という対立仮説を立てた場合を考えるが、<span class="math inline">\(\small \mu&lt;\mu_0\)</span>のような対立仮説を設計しても正負を入れ替えることで同様の議論ができる。なお、片側検定において帰無仮説が棄却された場合、直ちに帰無仮説の値よりも大きい値を取ると判断する。しかしながら、たとえ異なる対立仮説を提示しても、採用する検定統計量や帰無仮説に基づく分布の仮定などは同じである。
+片側検定を利用した場合の特殊性はその棄却域に現れる。片側検定の場合の棄却域は以下の図のように片側のみとなる。なお、その場合分布の両端に棄却域を設ける必要がないため、正の方向に <span class="math inline">\(\small \alpha\)</span> 分の棄却域を設定する。</p>
+<div class="float">
+<img src="stat/ztest_onetail.png" style="width:70.0%" alt="片側検定（正の場合）" />
+<div class="figcaption">片側検定（正の場合）</div>
+</div>
+</div>
+<div id="errors" class="section level3 hasAnchor">
+<h3>有意水準と検定における誤り<a href="testtheory.html#errors" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>ここまでの内容をまとめると、帰無仮説を仮定して検定統計量を計算する場合、帰無仮説が正しければ、棄却域内の値を取る確率は <span class="math inline">\(\small 100\times \alpha\)</span>%であると言える。そして、検定統計量の計算結果が棄却域に含まれる場合、帰無仮説を棄却するという判断を下す。そのため、統計的に帰無仮説を棄却したからと言って、その結果が必ず正しいとは言い切れない。統計的検定には、根本的に第一種の誤り（Type 1 error）と第二種の誤り（Type 2 error）という二種類の誤りの可能性が内包されている。</p>
+<p>第一種の誤りとは、帰無仮説が真であるにもかかわらず、帰無仮説を棄却してしまう誤りである。一方で第二種の誤りは、帰無仮説が真ではないにもかかわらず、帰無仮説を採択してしまう誤りである。例えば、ある薬に期待される効果があるかどうかを検証する場合を考える。この時、帰無仮説は「投薬による効果がない」、対立仮説は「投薬による効果がある」と設計する。この場合における第一種の誤りとは、「本当は効き目のない薬を効くと判断してしまう誤り」であり、第二種の誤りとは、「本当は効き目のある薬を効かないと判断したしまう誤り」である。</p>
+<table>
+<caption><span id="tab:errortypes">Table 4: </span>検定の誤り</caption>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center">H0が真</th>
+<th align="center">H0が偽</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">H0を棄却</td>
+<td align="center">Type 1 error</td>
+<td align="center">✓</td>
+</tr>
+<tr class="even">
+<td align="center">H0を採択</td>
+<td align="center">✓</td>
+<td align="center">Type 2 error</td>
+</tr>
+</tbody>
+</table>
+<p>どちらの誤りも見過ごすことのできないものではあるが、第一種の誤りによる損失と、第二種の誤りによる損失を比較し、一般的な統計的検定においては、第一種の誤りの確率を下げることに注視する。なお、研究によっては下記にある検定力という指標に着目し、第二種の誤りに対応した議論を提示することもあるが、本書では割愛する。仮説検定では特に、第一種の誤りの確率を有意水準 <span class="math inline">\(\small \alpha\)</span> と設定し分析する。また有意水準は、先述の通り棄却域の特定に用いられる。つまり、統計的仮説検定とは、帰無仮説が正しいと仮定した上で有意水準 <span class="math inline">\(\small \alpha\)</span> の分だけ第一種の誤りの確率を許容したうえで仮説が正しいか否かを確認する作業である。</p>
+<p>上記の統計的検定に関わる誤りは、<span class="math inline">\(\small T_0\)</span> は統計量 <em>T</em> の観測値、<em>R</em>は<span class="math inline">\(\small H_0\)</span> の棄却域、<em>A</em>は<span class="math inline">\(\small H_0\)</span>の採択域とし、以下のように示される。</p>
+<ul>
+<li><p>有意水準: <span class="math inline">\(\alpha\)</span>
+<span class="math display">\[
+P(T_0\in R|H_0~\text{が真})=\alpha
+\]</span></p></li>
+<li><p>第二種の誤りの確率: <span class="math inline">\(\beta\)</span>
+<span class="math display">\[
+P(T_0\in A|H_0~\text{が偽})=\beta
+\]</span></p></li>
+<li><p>検定力: <span class="math inline">\(1 - \beta\)</span>
+<span class="math display">\[
+P(T_0\in R|H_0~\text{が偽})=1-\beta
+\]</span></p></li>
+</ul>
+<p>ここで、仮説検定に関わる有意水準を <span class="math inline">\(\small \alpha=0.05\)</span> と設定する。帰無仮説が正しいという条件のもとで、帰無仮説を棄却する確率であるため、有意水準は以下のように示すことができる。</p>
+<p><span class="math display">\[
+\alpha=P(|Z|&gt;c|\mu=\mu_0) =0.05
+\]</span>
+しかしながら、このままだと確率計算が複雑になるため、上式を以下のように書き換える。</p>
+<p><span class="math display">\[
+1-\alpha=P(|Z|\leq c|\mu=\mu_0) = \int^c_{-c}f(Z)dZ~_{|\mu=\mu_0}=0.95
+\]</span>
+なお、上式の関係を表した図が図 <a href="testtheory.html#fig:ztest">1</a>になる。</p>
+</div>
+<div id="testresults" class="section level3 hasAnchor">
+<h3>検定結果に関する解釈<a href="testtheory.html#testresults" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><a href="testtheory.html#errors"><strong>??</strong></a> の検定について、検定統計量 <em>Z</em> は帰無仮説が正しければ標準正規分布に従うはずである。したがって、臨界値 <span class="math inline">\(\pm c\)</span> は、<span class="math inline">\(\pm z_{0.025}\)</span> として分布表などより導出が可能である。Rにおいては前節と同様、<code>qnorm()</code> により、<span class="math inline">\(z_{0.025}=1.96\)</span> だとわかる。すなわち、検定統計量の計算結果が 1.96（-1.96）を上回る（下回る）場合には、帰無仮説を棄却するが、そこには第一種の誤りを犯す確率が5%残されていると解釈できる。</p>
+<p>一方で、統計的に有意でない（帰無仮説を棄却できない）結果を得たときには、その解釈について注意が必要である。具体的には、統計的に有意でないからと言って、帰無仮説が正しい（つまり <span class="math inline">\(\small \mu =\mu_0\)</span> である）と結論づけることはできない。ここまでの説明の通り、有意水準とは第一種の誤りを犯す確率であり、有意水準に基づく統計的検定では主にこの確率に対応した分析を行っている。そのため、第二種の誤りである、本当は <span class="math inline">\(\small \mu \neq \mu_0\)</span> であるにも関わらず、<span class="math inline">\(\small \mu =\mu_0\)</span> と判断している可能性については未対応である。これらの点から「有意でない」ということを理由に、帰無仮説が正しいと結論づけることは適切ではない。</p>
+<p>なお、ここまでの議論のように母集団の分散が既知の場合、検定統計量は標準正規分布に従うと仮定できる。しかし母集団の分散が未知の場合は、信頼区間での議論と同様、標準偏差の不偏推定量を用いて、自由度 n-1 の <em>t</em> 分布を仮定した分析を行う。そして、t分布に基づく母平均に関する検定を一般的に「t検定（t-test）」と呼ぶ。</p>
+<p>より実践的な視座から統計的な検定において解釈に注意が必要な点として、p-value（p値）がある。 <code>t.test()</code> を用いた分析例でも紹介するが、R (他のソフトウェアでも)で統計的検定を実行すると “p-value”（p値）という値を得る。p値は、帰無仮説が正しいと仮定したときに，手元のデータから計算した検定統計量以上に極端な値をとる確率だと定義できる（豊田, 2017）。そしてp値が有意水準よりも小さい場合には、帰無仮説が間違っていたという判断を下すというのが、p値に基づく帰無仮説棄却の判断である。p値については、「値が小さければ仮説が真であることを示す指標」や「小さいほど結果の重要性を示す指標」といった解釈を行うこともあるが、このような解釈は不適切である（Baker, 2016）。</p>
+<p>棄却域と有意水準の関係に基づき述べると、以下のように説明することができる（cf. 西山など, 2019）。有意水準（帰無仮説が正しいが帰無仮説を棄却する確率）を小さく取ると、棄却域は狭くなる。例えば、ある仮説検定において、5%有意水準では帰無仮説を棄却できるが、1%ではできない場合がある。計算された検定統計量の実現値に基づき、有意水準を変えながら検定を行っていくと、これ以上有意水準を小さくすると帰無仮説が棄却されなくなるという有意水準の限界を見つけることができる。この限界をp値と呼ぶ。そのため、p値によって示されている確率は有意水準と同様のものを捉えているのだが、その計算過程が異なるという点において注意が必要である。</p>
+</div>
+<div id="lightbulb" class="section level3 hasAnchor">
+<h3>電球データと検定<a href="testtheory.html#lightbulb" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>先程の新型電球の例を再度使い母平均の検定を実施する。新型電球について我々が関心を持っていたのは、新型電球の製品寿命が旧型の寿命（1800時間）より長いか否かである。そのため、新型電球の製品寿命の期待値を <span class="math inline">\(\small \mu\)</span> とすると、帰無仮説と対立仮説は以下のように設計できる。</p>
+<ul>
+<li><span class="math inline">\(H_0:~\mu=1800\)</span></li>
+<li><span class="math inline">\(H_1:~\mu\neq1800\)</span></li>
+</ul>
+<p>改めて以下の通り、新型電球に関する16個の無作為標本から得た製品寿命の平均値を計算すると、<span class="math inline">\(\small \bar{X}=1951.194\)</span> であった。では、この1951は 1800 から十分に離れていると言えるのだろうか。もし、十分に離れていると判断されれば帰無仮説を棄却するが、この差が十分でなければ帰無仮説を棄却しない。</p>
+<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="testtheory.html#cb139-1" tabindex="-1"></a><span class="fu">mean</span>(bulb)</span></code></pre></div>
+<pre><code>## [1] 1951.194</code></pre>
+<p>Rを用いて統計的検定を実行すること自体は難しくない。まず、t検定に基づく母平均の検定は <code>t.test()</code> で実施することが可能である。母平均が特定の値を取るか否かについての検定では、<code>mu=</code> という引数を使って帰無仮説に対応する値を指定する。今回の分析に関するコマンドおよびその結果は以下のとおりである。</p>
+<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="testtheory.html#cb141-1" tabindex="-1"></a><span class="fu">t.test</span>(bulb, <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span>, <span class="at">mu =</span> <span class="dv">1800</span>)</span></code></pre></div>
+<pre><code>## 
+##  One Sample t-test
+## 
+## data:  bulb
+## t = 3.9155, df = 15, p-value = 0.001377
+## alternative hypothesis: true mean is not equal to 1800
+## 95 percent confidence interval:
+##  1868.890 2033.498
+## sample estimates:
+## mean of x 
+##  1951.194</code></pre>
+<p>分析結果の <code>t=</code> と <code>df =</code> はそれぞれt値（検定統計量の推定値）と自由度を表している。<code>p-value</code>はp値と呼ばれるある確率を表しており、先述の通り、注意の必要な指標である。また、<code>t.test()</code> は、信頼区間や標本平均も出力してくれるため、これらの結果に基づき解釈を行うことも可能である。帰無仮説の棄却に至るp値の基準は慣習的に、0.10（10%）、0.05（5%）、0.01（1%）が用いられる。今回の結果では、p値が<code>p-value = 0.001377</code>であり、5%水準で帰無仮説を棄却することができるため、新型電球の寿命は旧型（1800時間）よりも有意に高いと結論づけることができる。</p>
+<p>上述の <code>t.test()</code> は母分散が未知である際に用いられる検定方法である。この点は、信頼区間において説明した内容と同様である。なお実際のデータ分析作業においては多くの場合母分散は未知であるため、<code>t.test()</code> を用いることが多い。しかしながら、電球の例では母集団の分散は <span class="math inline">\(\small 180^2\)</span> であることを仮定した。そのため、ここからは母分散が既知（<span class="math inline">\(\small \sigma^2=180^2\)</span>）であることを仮定した標準正規分布に基づく母平均の検定を軸に説明していく。</p>
+<p>電球の例においては、<span class="math inline">\(H_0:~\mu=1800\)</span>と設計していたため、検定統計量 <em>Z</em> は以下の通りに書き換えることができる。ただし、今回の例においては、 <span class="math inline">\(\small \bar{X}=1951\)</span>、<span class="math inline">\(\small \sigma=180\)</span> であることがわかっている。</p>
+<p><span class="math display">\[
+Z=\frac{1951-1800}{\sqrt{180^2/16}}
+\]</span></p>
+<p>ここまでの議論を踏まえ、新型電球に関する統計的検定を標準正規分布に基づき以下のように実施する。</p>
+<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="testtheory.html#cb143-1" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">length</span>(bulb)</span>
+<span id="cb143-2"><a href="testtheory.html#cb143-2" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(<span class="fl">0.025</span>, <span class="at">lower.tail=</span><span class="cn">FALSE</span>)</span>
+<span id="cb143-3"><a href="testtheory.html#cb143-3" tabindex="-1"></a>xbar <span class="ot">&lt;-</span> <span class="fu">mean</span>(bulb)</span>
+<span id="cb143-4"><a href="testtheory.html#cb143-4" tabindex="-1"></a>sigma <span class="ot">&lt;-</span> <span class="dv">180</span></span>
+<span id="cb143-5"><a href="testtheory.html#cb143-5" tabindex="-1"></a>mu <span class="ot">&lt;-</span> <span class="dv">1800</span></span>
+<span id="cb143-6"><a href="testtheory.html#cb143-6" tabindex="-1"></a></span>
+<span id="cb143-7"><a href="testtheory.html#cb143-7" tabindex="-1"></a><span class="co">#Test statistic</span></span>
+<span id="cb143-8"><a href="testtheory.html#cb143-8" tabindex="-1"></a>Z <span class="ot">&lt;-</span> (xbar <span class="sc">-</span> mu)<span class="sc">/</span>(sigma<span class="sc">/</span><span class="fu">sqrt</span>(n))</span>
+<span id="cb143-9"><a href="testtheory.html#cb143-9" tabindex="-1"></a>Z</span></code></pre></div>
+<pre><code>## [1] 3.359861</code></pre>
+<p>分析の結果、検定統計量 <em>Z</em> の実現値が5%有意水準に基づく臨界値（1.96）よりも大きいことが示されたため、5%有意水準で帰無仮説が棄却された。つまり、5%の第一種の誤りの確率を残した上ではあるが、新型電球の製品寿命は旧型製品の寿命よりも長いと言える。このような結果は一般的に、「統計的に有意」な結果と表現される。</p>
+<p>ここまでは、有意水準の意味を踏まえ、検定の手順及び結果の解釈について説明した。しかしながら、先述の通りもし統計的に有意でない（帰無仮説を棄却できない）結果を得たときには、その解釈について注意が必要である。もし今回の仮説検定で帰無仮説を棄却できていなかったとしたら、その結論は「新型電球寿命の平均は1800時間ではないとは言えない」となる。なんとも歯切れの悪い結論だが、統計的検定の特性上、このような解釈を提示しないといけない。</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="7">
+<li id="fn7"><p>平均 <span class="math inline">\(\small \mu\)</span>、分散 <span class="math inline">\(\small \sigma^2/n\)</span>の正規分布<a href="testtheory.html#fnref7" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="intinf.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="meancomparison.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/USERNAME/REPO/edit/BRANCH/03-stat.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection",
+    "scroll_highlight": true
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
