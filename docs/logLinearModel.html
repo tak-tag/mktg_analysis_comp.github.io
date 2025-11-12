@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>対数線形 | マーケティング・データ分析補足資料</title>
+  <meta name="description" content="対数線形 | マーケティング・データ分析補足資料" />
+  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="対数線形 | マーケティング・データ分析補足資料" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta name="github-repo" content="https://github.com/tak-tag/mktg_analysis_comp.github.io" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="対数線形 | マーケティング・データ分析補足資料" />
+  
+  
+  
+
+
+
+<meta name="date" content="2025-11-12" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="coefComparison.html"/>
+<link rel="next" href="ch6Reference.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>本ウェブサイトについて</a></li>
+<li class="chapter" data-level="" data-path="rusage.html"><a href="rusage.html"><i class="fa fa-check"></i>R と R studioに慣れる</a>
+<ul>
+<li class="chapter" data-level="" data-path="ch2intro.html"><a href="ch2intro.html"><i class="fa fa-check"></i>本章の概要</a></li>
+<li class="chapter" data-level="" data-path="desktop.html"><a href="desktop.html"><i class="fa fa-check"></i>R studio デスクトップ版の利用</a></li>
+<li class="chapter" data-level="" data-path="project.html"><a href="project.html"><i class="fa fa-check"></i>プロジェクト機能について</a></li>
+<li class="chapter" data-level="" data-path="basics.html"><a href="basics.html"><i class="fa fa-check"></i>Rの基本操作</a></li>
+<li class="chapter" data-level="" data-path="rscript.html"><a href="rscript.html"><i class="fa fa-check"></i>R スクリプトのすゝめ</a>
+<ul>
+<li class="chapter" data-level="" data-path="rscript.html"><a href="rscript.html#writeRscript"><i class="fa fa-check"></i>Rスクリプトを書く</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="ch2summary.html"><a href="ch2summary.html"><i class="fa fa-check"></i>本章のまとめ</a></li>
+<li class="chapter" data-level="" data-path="positcloud.html"><a href="positcloud.html"><i class="fa fa-check"></i>コラム：Posit cloudを使ってみる</a></li>
+<li class="chapter" data-level="" data-path="ch2reference.html"><a href="ch2reference.html"><i class="fa fa-check"></i>参考文献</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="handling.html"><a href="handling.html"><i class="fa fa-check"></i>データ整理と要約・可視化</a>
+<ul>
+<li class="chapter" data-level="" data-path="Ch3intro.html"><a href="Ch3intro.html"><i class="fa fa-check"></i>本章の概要</a></li>
+<li class="chapter" data-level="" data-path="readData.html"><a href="readData.html"><i class="fa fa-check"></i>データの読み込み</a></li>
+<li class="chapter" data-level="" data-path="normalization.html"><a href="normalization.html"><i class="fa fa-check"></i>データの整形</a>
+<ul>
+<li class="chapter" data-level="" data-path=""><a href="#tidyverse-%E3%81%AE%E6%B4%BB%E7%94%A8"><i class="fa fa-check"></i>tidyverse の活用</a></li>
+<li class="chapter" data-level="" data-path="normalization.html"><a href="normalization.html#firmdata"><i class="fa fa-check"></i>企業データの処理</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="summary.html"><a href="summary.html"><i class="fa fa-check"></i>データの要約と可視化</a>
+<ul>
+<li class="chapter" data-level="" data-path="summary.html"><a href="summary.html#descriptiveStat"><i class="fa fa-check"></i>記述統計</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="categoricalVar.html"><a href="categoricalVar.html"><i class="fa fa-check"></i>カテゴリ変数の要約</a></li>
+<li class="chapter" data-level="" data-path="visualization.html"><a href="visualization.html"><i class="fa fa-check"></i>データの可視化</a></li>
+<li class="chapter" data-level="" data-path="cor.html"><a href="cor.html"><i class="fa fa-check"></i>二変数間の関係の要約</a></li>
+<li class="chapter" data-level="" data-path="ch3reference.html"><a href="ch3reference.html"><i class="fa fa-check"></i>参考文献</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="test.html"><a href="test.html"><i class="fa fa-check"></i>基礎統計学復習</a>
+<ul>
+<li class="chapter" data-level="" data-path="ch4Intro.html"><a href="ch4Intro.html"><i class="fa fa-check"></i>本章の概要</a></li>
+<li class="chapter" data-level="" data-path="probability.html"><a href="probability.html"><i class="fa fa-check"></i>確率モデル、期待値と分散</a>
+<ul>
+<li class="chapter" data-level="" data-path="probability.html"><a href="probability.html#discrete"><i class="fa fa-check"></i>確率と離散確率変数</a></li>
+<li class="chapter" data-level="" data-path="probability.html"><a href="probability.html#continuous"><i class="fa fa-check"></i>連続確率変数</a></li>
+<li class="chapter" data-level="" data-path="probability.html"><a href="probability.html#expectation"><i class="fa fa-check"></i>期待値</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="inference.html"><a href="inference.html"><i class="fa fa-check"></i>統計的推測</a></li>
+<li class="chapter" data-level="" data-path="pestimate.html"><a href="pestimate.html"><i class="fa fa-check"></i>点推定</a></li>
+<li class="chapter" data-level="" data-path="estimates.html"><a href="estimates.html"><i class="fa fa-check"></i>推定量もまた確率変数</a></li>
+<li class="chapter" data-level="" data-path="distribution.html"><a href="distribution.html"><i class="fa fa-check"></i>補足（いくつかの確率分布の関係性）</a>
+<ul>
+<li class="chapter" data-level="" data-path=""><a href="#%E6%AD%A3%E8%A6%8F%E5%88%86%E5%B8%83"><i class="fa fa-check"></i>正規分布</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#%E3%82%AB%E3%82%A4%E4%BA%8C%E4%B9%97%E5%88%86%E5%B8%83"><i class="fa fa-check"></i>カイ二乗分布</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#t%E5%88%86%E5%B8%83"><i class="fa fa-check"></i>t分布</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#f%E5%88%86%E5%B8%83"><i class="fa fa-check"></i>F分布</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="intinf.html"><a href="intinf.html"><i class="fa fa-check"></i>区間推定</a>
+<ul>
+<li class="chapter" data-level="" data-path=""><a href="#%E6%A8%99%E6%BA%96%E6%AD%A3%E8%A6%8F%E5%88%86%E5%B8%83%E3%81%AB%E5%9F%BA%E3%81%A5%E3%81%8F%E4%BF%A1%E9%A0%BC%E5%8C%BA%E9%96%93%E3%81%AE%E6%B1%82%E3%82%81%E6%96%B9"><i class="fa fa-check"></i>標準正規分布に基づく信頼区間の求め方*</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#t%E5%88%86%E5%B8%83%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%9F%E5%8C%BA%E9%96%93%E6%8E%A8%E5%AE%9A"><i class="fa fa-check"></i>t分布を使った区間推定*</a></li>
+<li class="chapter" data-level="" data-path="intinf.html"><a href="intinf.html#infwithR"><i class="fa fa-check"></i>Rによる区間推定</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="testtheory.html"><a href="testtheory.html"><i class="fa fa-check"></i>統計的仮説検定</a>
+<ul>
+<li class="chapter" data-level="" data-path="testtheory.html"><a href="testtheory.html#nullhypo"><i class="fa fa-check"></i>検定の手順と仮説</a></li>
+<li class="chapter" data-level="" data-path="testtheory.html"><a href="testtheory.html#twotail"><i class="fa fa-check"></i>母平均の検定（両側検定）に関する理屈</a></li>
+<li class="chapter" data-level="" data-path="testtheory.html"><a href="testtheory.html#onetail"><i class="fa fa-check"></i>片側検定の紹介</a></li>
+<li class="chapter" data-level="" data-path="testtheory.html"><a href="testtheory.html#errors"><i class="fa fa-check"></i>有意水準と検定における誤り</a></li>
+<li class="chapter" data-level="" data-path="testtheory.html"><a href="testtheory.html#testresults"><i class="fa fa-check"></i>検定結果に関する解釈</a></li>
+<li class="chapter" data-level="" data-path="testtheory.html"><a href="testtheory.html#lightbulb"><i class="fa fa-check"></i>電球データと検定</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="meancomparison.html"><a href="meancomparison.html"><i class="fa fa-check"></i>平均値に関するその他の検定</a></li>
+<li class="chapter" data-level="" data-path="ANOVA.html"><a href="ANOVA.html"><i class="fa fa-check"></i>分散分析</a>
+<ul>
+<li class="chapter" data-level="" data-path=""><a href="#%E5%88%86%E6%95%A3%E5%88%86%E6%9E%90%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%81%AE%E3%83%A2%E3%83%87%E3%83%AB%E8%A1%A8%E7%8F%BEanoatheory"><i class="fa fa-check"></i>分散分析についてのモデル表現*{#ANOAtheory}</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#%E4%BA%8C%E5%85%83%E9%85%8D%E7%BD%AE%E5%88%86%E6%95%A3%E5%88%86%E6%9E%90twowayanoa"><i class="fa fa-check"></i>二元配置分散分析*{#twowayANOA}</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#%E4%BA%8C%E5%85%83%E9%85%8D%E7%BD%AE%E3%83%A2%E3%83%87%E3%83%AB%E3%81%AE%E5%8A%B9%E6%9E%9C%E6%A4%9C%E5%AE%9Atwowaytest"><i class="fa fa-check"></i>二元配置モデルの効果検定*{#twowaytest}</a></li>
+<li class="chapter" data-level="" data-path="ANOVA.html"><a href="ANOVA.html#tukey"><i class="fa fa-check"></i>多重比較とそれに伴う統計的問題</a></li>
+<li class="chapter" data-level="" data-path="ANOVA.html"><a href="ANOVA.html#ANOVAwithR"><i class="fa fa-check"></i>Rによる分散分析の実行</a></li>
+<li class="chapter" data-level="" data-path="ANOVA.html"><a href="ANOVA.html#ANOVAandReg"><i class="fa fa-check"></i>回帰分析と分散分析の関係</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="pwr.html"><a href="pwr.html"><i class="fa fa-check"></i>検定力分析とサンプルサイズ</a></li>
+<li class="chapter" data-level="" data-path="ch4reference.html"><a href="ch4reference.html"><i class="fa fa-check"></i>参考文献</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="regintro.html"><a href="regintro.html"><i class="fa fa-check"></i>回帰分析</a>
+<ul>
+<li class="chapter" data-level="" data-path="ch5Intro.html"><a href="ch5Intro.html"><i class="fa fa-check"></i>本章の概要</a></li>
+<li class="chapter" data-level="" data-path="regpreparation.html"><a href="regpreparation.html"><i class="fa fa-check"></i>分析準備</a></li>
+<li class="chapter" data-level="" data-path="prediction.html"><a href="prediction.html"><i class="fa fa-check"></i>単回帰モデルと予測値</a>
+<ul>
+<li class="chapter" data-level="" data-path="prediction.html"><a href="prediction.html#lmmodel"><i class="fa fa-check"></i>企業データを用いた回帰分析の実行</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="multiplereg.html"><a href="multiplereg.html"><i class="fa fa-check"></i>重回帰モデル</a>
+<ul>
+<li class="chapter" data-level="" data-path="multiplereg.html"><a href="multiplereg.html#mregIntro"><i class="fa fa-check"></i>重回帰モデル概要</a></li>
+<li class="chapter" data-level="" data-path="multiplereg.html"><a href="multiplereg.html#mreginterpret"><i class="fa fa-check"></i>回帰係数の解釈</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="modelcomp.html"><a href="modelcomp.html"><i class="fa fa-check"></i>単回帰モデルと重回帰モデルの比較</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><i class="fa fa-check"></i>参考文献</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="regtechnic.html"><a href="regtechnic.html"><i class="fa fa-check"></i>回帰分析上の工夫紹介</a>
+<ul>
+<li class="chapter" data-level="" data-path="ch6Intro.html"><a href="ch6Intro.html"><i class="fa fa-check"></i>本章の概要</a></li>
+<li class="chapter" data-level="" data-path="dummy.html"><a href="dummy.html"><i class="fa fa-check"></i>ダミー変数</a>
+<ul>
+<li class="chapter" data-level="" data-path="dummy.html"><a href="dummy.html#dummywithR"><i class="fa fa-check"></i>企業データを用いた分析の実行</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="interaction.html"><a href="interaction.html"><i class="fa fa-check"></i>交差項</a>
+<ul>
+<li class="chapter" data-level="" data-path="interaction.html"><a href="interaction.html#slopedummy"><i class="fa fa-check"></i>傾きダミー</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#%E5%82%BE%E3%81%8D%E3%83%80%E3%83%9F%E3%83%BC%E3%81%AE%E5%AE%9F%E8%A1%8Cslopedummywithr"><i class="fa fa-check"></i>傾きダミーの実行{slopedummywithR}</a></li>
+<li class="chapter" data-level="" data-path="interaction.html"><a href="interaction.html#id_5"><i class="fa fa-check"></i>量的変数同士の交差項</a></li>
+<li class="chapter" data-level="" data-path="interaction.html"><a href="interaction.html#interactionwithR"><i class="fa fa-check"></i>交差項モデルの実行</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="coefComparison.html"><a href="coefComparison.html"><i class="fa fa-check"></i>係数比較</a>
+<ul>
+<li class="chapter" data-level="" data-path="coefComparison.html"><a href="coefComparison.html#coefComparisonwithR"><i class="fa fa-check"></i>係数比較の実行</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="logLinearModel.html"><a href="logLinearModel.html"><i class="fa fa-check"></i>対数線形</a>
+<ul>
+<li class="chapter" data-level="" data-path="logLinearModel.html"><a href="logLinearModel.html#logLinearwithR"><i class="fa fa-check"></i>対数線形モデルの分析実行</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#%E9%9C%80%E8%A6%81%E3%81%AE%E4%BE%A1%E6%A0%BC%E5%BC%BE%E5%8A%9B%E6%80%A7%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6elasticity"><i class="fa fa-check"></i>需要の価格弾力性について*{#elasticity}</a></li>
+<li class="chapter" data-level="" data-path="logLinearModel.html"><a href="logLinearModel.html#linearTest"><i class="fa fa-check"></i>対数線形の推定と検定</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="ch6Reference.html"><a href="ch6Reference.html"><i class="fa fa-check"></i>参考文献</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">マーケティング・データ分析補足資料</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="logLinearModel" class="section level2 hasAnchor">
+<h2>対数線形<a href="logLinearModel.html#logLinearModel" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>ここまでの回帰モデルの特定化では、一次関数を利用していた。しかしながら、以下の図のように傾きの大きさが途中で変化するような非線形の関係には一次関数のモデルは上手くフィットしない。</p>
+<div class="float">
+<img src="reg/nonlinear.png" style="width:70.0%" alt="非線形例" />
+<div class="figcaption">非線形例</div>
+</div>
+<p>非線形の関係として例えば、以下のような関数形がある。</p>
+<p><span class="math display">\[
+Y=AL^\alpha K^\beta
+\]</span></p>
+<p>ここで、<em>Y</em>は生産量、<em>L</em>は労働投入量、<em>K</em> は資産を仮定すると、上記の式は、経済学で使用され、経営学分野にも応用されるコブダグラス型の生産関数として知られている。しかしながら、このような関数をそのまま線形回帰分析に当てはめることはできない。そこで、右辺と左辺両側の変数に対して、自然対数を用いた変数変換を行うことで、回帰分析で推定可能なモデルを構築する。このような変換された説明変数（例、<span class="math inline">\(\small \ln K_i\)</span>）を用いる定式化であれば、推定される係数については線形の形で扱うことができる。対数による変数変換を伴う線形回帰モデルは、一般に対数線形モデルと呼ばれる。</p>
+<p><span class="math display">\[
+\ln Y_i = \ln A + \alpha\ln K_i+\beta\ln L_i + u_i
+\]</span></p>
+<div id="logLinearwithR" class="section level3 hasAnchor">
+<h3>対数線形モデルの分析実行<a href="logLinearModel.html#logLinearwithR" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>このような回帰式をR上で構築することは難しくない。<code>lm()</code> 関数内のモデル定式化において、<code>log()</code> を用いれば良い。例えば、上の式を firmdata19 に当てはめて、<em>Y</em>を売上、<em>L</em>を人件費、<em>K</em> を有形固定資産とおいて、以下のようにモデルを推定してみる<a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a>。</p>
+<div class="sourceCode" id="cb213"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb213-1"><a href="logLinearModel.html#cb213-1" tabindex="-1"></a>fit_prod <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="fu">log</span>(sales) <span class="sc">~</span> <span class="fu">log</span>(labor_cost) <span class="sc">+</span> <span class="fu">log</span>(ppent), <span class="at">data =</span> firmdata19)</span>
+<span id="cb213-2"><a href="logLinearModel.html#cb213-2" tabindex="-1"></a></span>
+<span id="cb213-3"><a href="logLinearModel.html#cb213-3" tabindex="-1"></a><span class="fu">summary</span>(fit_prod)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = log(sales) ~ log(labor_cost) + log(ppent), data = firmdata19)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -1.40821 -0.36129 -0.00933  0.38591  1.66673 
+## 
+## Coefficients:
+##                 Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)      3.17129    0.31733   9.994   &lt;2e-16 ***
+## log(labor_cost)  0.53739    0.03679  14.605   &lt;2e-16 ***
+## log(ppent)       0.34588    0.02797  12.366   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.5169 on 143 degrees of freedom
+## Multiple R-squared:  0.8747, Adjusted R-squared:  0.8729 
+## F-statistic: 499.1 on 2 and 143 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>このような対数線形モデルでは、これまでのような一次関数モデルとは異なる係数の解釈を行う必要がある。両側対数の回帰モデルにおける回帰係数は、「弾力性」を表している。つまり係数は、説明変数が 1% 増加したとき、被説明変数が何%変化するか（変化率）を表している。また、この係数解釈の特徴から、マーケティング分野においても対数線形モデルはよく用いられる。具体的には、対数線形モデルによって需要の価格弾力性（価格が1%増えたときに、需要量が何%減るか）を分析することができる。</p>
+<p>需要の価格弾力性（<span class="math inline">\(\eta\)</span>: イータ）は、消費者による価格感度を捉える指標である。通常、他の要素を一定とした場合、価格が下がると需要量は上がる。では、価格の変化がどの程度需要量に影響を与えるのかという問いは、実務的にも学術的にも重要になる。その際に、単位に依存しない価格感度の尺度として最も広く使われているものが、需要の価格弾力性である。また弾力性は、1を重要な閾値として実務的に重要な含意を与える。弾力性値に応じた含意は以下のように整理することができる。</p>
+<ul>
+<li><p><span class="math inline">\(\small \eta= 1\)</span> の場合:</p>
+<ul>
+<li>価格が1%下がった時に需要量が1%上がることを意味する。価格と需要の変化率がちょうど釣り合った状態。</li>
+</ul></li>
+<li><p><span class="math inline">\(\small \eta &gt; 1\)</span> の場合:</p>
+<ul>
+<li>価格の上昇によって需要量が著しく減る（価格に敏感に反応する）。</li>
+<li>価格の上昇によって売上を損ねる（需要量の損失が価格上昇の便益を上回っている） 。</li>
+</ul></li>
+<li><p><span class="math inline">\(\small \eta &lt; 1\)</span> の場合:</p>
+<ul>
+<li>価格の上昇によって需要量があまり減らない（価格に敏感に反応しない）</li>
+<li>価格の上昇によって売上が伸びる（価格上昇の便益が需要量の損失を上回っている） 。以下では、対数線形モデルと需要の価格弾力性との関係に関する補足的な説明を追加している。</li>
+</ul></li>
+</ul>
+</div>
+<div id="需要の価格弾力性についてelasticity" class="section level3 hasAnchor">
+<h3>需要の価格弾力性について*{#elasticity}<a href="#%E9%9C%80%E8%A6%81%E3%81%AE%E4%BE%A1%E6%A0%BC%E5%BC%BE%E5%8A%9B%E6%80%A7%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6elasticity" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>ここでは、需要の価格弾力性についてもう少し詳細な説明を加える。需要の価格弾力性は、需要（<em>q(p)</em>）と価格（<em>p</em>）とし、以下の <span class="math inline">\(\eta\)</span>のように定義できる。</p>
+<p><span class="math display">\[
+\eta=-\frac{dq}{dp}\times \frac{p}{q}
+\]</span></p>
+<p>この価格弾力性の定義に基づき、なぜ１が重要な閾値になるのかを説明する。 価格の変化による売上の変化 <span class="math inline">\(dpq/dp\)</span> の関係を変形することで <span class="math inline">\(\small \eta\)</span> について以下を得る。</p>
+<p><span class="math display">\[
+\frac{dp\cdot q}{dp}=q+p\cdot\frac{dq}{dp}=q\left[1-\left(-\frac{dq}{dp}\cdot\frac{p}{q}\right)\right]=q(1-\eta)
+\]</span></p>
+<p>そのため、<span class="math inline">\(\small \eta\)</span> が１より小さい時、価格の増加による売上の変化が正（<span class="math inline">\(dpq/dp&gt;0\)</span>）であることが伺える。</p>
+</div>
+<div id="linearTest" class="section level3 hasAnchor">
+<h3>対数線形の推定と検定<a href="logLinearModel.html#linearTest" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>ここで、需要の価格弾力性に関する分析を実行するために、“price_data.csv” という人工データを用いる。このデータはある製品の（架空の）価格と需要量の情報を含んでいる。以下のようにデータを読み込み、分析を実行してほしい。</p>
+<div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb215-1"><a href="logLinearModel.html#cb215-1" tabindex="-1"></a>price <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">&quot;data/price_data.csv&quot;</span>)</span>
+<span id="cb215-2"><a href="logLinearModel.html#cb215-2" tabindex="-1"></a></span>
+<span id="cb215-3"><a href="logLinearModel.html#cb215-3" tabindex="-1"></a>fit_q <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="fu">log</span>(q) <span class="sc">~</span> <span class="fu">log</span>(p), <span class="at">data =</span> price)</span>
+<span id="cb215-4"><a href="logLinearModel.html#cb215-4" tabindex="-1"></a><span class="fu">summary</span>(fit_q)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = log(q) ~ log(p), data = price)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -1.11220 -0.13668  0.02804  0.16166  0.51039 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  9.47781    0.08135   116.5   &lt;2e-16 ***
+## log(p)      -0.18008    0.01354   -13.3   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.2309 on 998 degrees of freedom
+## Multiple R-squared:  0.1506, Adjusted R-squared:  0.1497 
+## F-statistic: 176.9 on 1 and 998 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>分析の結果、<code>log(p)</code> の係数は負に有意であった。しかしここで、デフォルトで出力される検定結果の「帰無仮説」を思い出して欲しい。これは、係数が0か否かの検定を行っている。しかしながら、需要の価格弾力性について議論する際に我々は、係数が 1 より高いか否かに興味がある。そのため、<span class="math inline">\(\small H_0:\beta = 1\)</span>という帰無仮説による検定を採用すべきである。このような検定の実行には、色々とやり方はあるが、本書では <code>car</code>というパッケージの<code>linearHypothesis()</code> 関数 を用いる方法を紹介する。まず、以下のようにパッケージをインストールして欲しい。</p>
+<div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb217-1"><a href="logLinearModel.html#cb217-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;car&quot;</span>)</span></code></pre></div>
+<p>そして、<code>linearHypothesis()</code>において、参照する分析結果と、着目する変数（の係数）とその値について入力することで、検定を行う。</p>
+<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb218-1"><a href="logLinearModel.html#cb218-1" tabindex="-1"></a><span class="fu">library</span>(car)</span>
+<span id="cb218-2"><a href="logLinearModel.html#cb218-2" tabindex="-1"></a><span class="fu">linearHypothesis</span>(fit_q, <span class="fu">c</span>(<span class="st">&quot;log(p) = -1&quot;</span>)) </span></code></pre></div>
+<pre><code>## 
+## Linear hypothesis test:
+## log(p) = - 1
+## 
+## Model 1: restricted model
+## Model 2: log(q) ~ log(p)
+## 
+##   Res.Df     RSS Df Sum of Sq      F    Pr(&gt;F)    
+## 1    999 248.811                                  
+## 2    998  53.225  1    195.59 3667.3 &lt; 2.2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>検定の結果、<code>fit.q</code> による係数の推定値は、有意に -1 とは異なることがわかった。つまり、弾力性は 1 より低く、非弾力的である（価格にあまり敏感でない）ことが伺えた。なお、一つの説明変数の有意性検定にF検定を用いる場合のF分布は対応するt分布の二乗値に等しい。そのため、<code>car</code> による検定では、F値を返しているが、それ自体に問題はない。</p>
+<p>最後に、回帰モデルにおいて対数化を右辺（説明変数）と左辺（被説明変数）のどちらに適用するかによって、係数の解釈が変わることを説明する。モデルの特定化と係数解釈の対応関係は、以下のように整理できる。</p>
+<ul>
+<li>両側対数（<span class="math inline">\(\ln y_i = \alpha + \beta\ln x_i + u_i\)</span>）:
+<ul>
+<li><span class="math inline">\(\beta\)</span> は <em>x</em> が 1%変化したときの <em>y</em> の変化率を表している。</li>
+</ul></li>
+<li>被説明変数のみ対数（<span class="math inline">\(\ln y_i = \alpha + \beta x_i + u_i\)</span>）:
+<ul>
+<li><span class="math inline">\(\beta\)</span> は <em>x</em> が 1単位変化したときの <em>y</em> の変化率を表している。</li>
+</ul></li>
+<li>説明変数のみ対数（<span class="math inline">\(y_i = \alpha + \beta\ln x_i + u_i\)</span>）:
+<ul>
+<li><span class="math inline">\(\beta\)</span> は <em>x</em> が 1%変化したときの <em>y</em> の変化量を表している。</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="11">
+<li id="fn11"><p>なお、実際に研究において生産関数を推定する場合には、変数の特定化に関して、先行研究に基づきより慎重に検討する必要があるため注意して欲しい<a href="logLinearModel.html#fnref11" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="coefComparison.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ch6Reference.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/USERNAME/REPO/edit/BRANCH/05-reg2.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection",
+    "scroll_highlight": true
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>ダミー変数 | マーケティング・データ分析補足資料</title>
+  <meta name="description" content="ダミー変数 | マーケティング・データ分析補足資料" />
+  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="ダミー変数 | マーケティング・データ分析補足資料" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta name="github-repo" content="https://github.com/tak-tag/mktg_analysis_comp.github.io" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="ダミー変数 | マーケティング・データ分析補足資料" />
+  
+  
+  
+
+
+
+<meta name="date" content="2025-11-12" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="ch6Intro.html"/>
+<link rel="next" href="interaction.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>本ウェブサイトについて</a></li>
+<li class="chapter" data-level="" data-path="rusage.html"><a href="rusage.html"><i class="fa fa-check"></i>R と R studioに慣れる</a>
+<ul>
+<li class="chapter" data-level="" data-path="ch2intro.html"><a href="ch2intro.html"><i class="fa fa-check"></i>本章の概要</a></li>
+<li class="chapter" data-level="" data-path="desktop.html"><a href="desktop.html"><i class="fa fa-check"></i>R studio デスクトップ版の利用</a></li>
+<li class="chapter" data-level="" data-path="project.html"><a href="project.html"><i class="fa fa-check"></i>プロジェクト機能について</a></li>
+<li class="chapter" data-level="" data-path="basics.html"><a href="basics.html"><i class="fa fa-check"></i>Rの基本操作</a></li>
+<li class="chapter" data-level="" data-path="rscript.html"><a href="rscript.html"><i class="fa fa-check"></i>R スクリプトのすゝめ</a>
+<ul>
+<li class="chapter" data-level="" data-path="rscript.html"><a href="rscript.html#writeRscript"><i class="fa fa-check"></i>Rスクリプトを書く</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="ch2summary.html"><a href="ch2summary.html"><i class="fa fa-check"></i>本章のまとめ</a></li>
+<li class="chapter" data-level="" data-path="positcloud.html"><a href="positcloud.html"><i class="fa fa-check"></i>コラム：Posit cloudを使ってみる</a></li>
+<li class="chapter" data-level="" data-path="ch2reference.html"><a href="ch2reference.html"><i class="fa fa-check"></i>参考文献</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="handling.html"><a href="handling.html"><i class="fa fa-check"></i>データ整理と要約・可視化</a>
+<ul>
+<li class="chapter" data-level="" data-path="Ch3intro.html"><a href="Ch3intro.html"><i class="fa fa-check"></i>本章の概要</a></li>
+<li class="chapter" data-level="" data-path="readData.html"><a href="readData.html"><i class="fa fa-check"></i>データの読み込み</a></li>
+<li class="chapter" data-level="" data-path="normalization.html"><a href="normalization.html"><i class="fa fa-check"></i>データの整形</a>
+<ul>
+<li class="chapter" data-level="" data-path=""><a href="#tidyverse-%E3%81%AE%E6%B4%BB%E7%94%A8"><i class="fa fa-check"></i>tidyverse の活用</a></li>
+<li class="chapter" data-level="" data-path="normalization.html"><a href="normalization.html#firmdata"><i class="fa fa-check"></i>企業データの処理</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="summary.html"><a href="summary.html"><i class="fa fa-check"></i>データの要約と可視化</a>
+<ul>
+<li class="chapter" data-level="" data-path="summary.html"><a href="summary.html#descriptiveStat"><i class="fa fa-check"></i>記述統計</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="categoricalVar.html"><a href="categoricalVar.html"><i class="fa fa-check"></i>カテゴリ変数の要約</a></li>
+<li class="chapter" data-level="" data-path="visualization.html"><a href="visualization.html"><i class="fa fa-check"></i>データの可視化</a></li>
+<li class="chapter" data-level="" data-path="cor.html"><a href="cor.html"><i class="fa fa-check"></i>二変数間の関係の要約</a></li>
+<li class="chapter" data-level="" data-path="ch3reference.html"><a href="ch3reference.html"><i class="fa fa-check"></i>参考文献</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="test.html"><a href="test.html"><i class="fa fa-check"></i>基礎統計学復習</a>
+<ul>
+<li class="chapter" data-level="" data-path="ch4Intro.html"><a href="ch4Intro.html"><i class="fa fa-check"></i>本章の概要</a></li>
+<li class="chapter" data-level="" data-path="probability.html"><a href="probability.html"><i class="fa fa-check"></i>確率モデル、期待値と分散</a>
+<ul>
+<li class="chapter" data-level="" data-path="probability.html"><a href="probability.html#discrete"><i class="fa fa-check"></i>確率と離散確率変数</a></li>
+<li class="chapter" data-level="" data-path="probability.html"><a href="probability.html#continuous"><i class="fa fa-check"></i>連続確率変数</a></li>
+<li class="chapter" data-level="" data-path="probability.html"><a href="probability.html#expectation"><i class="fa fa-check"></i>期待値</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="inference.html"><a href="inference.html"><i class="fa fa-check"></i>統計的推測</a></li>
+<li class="chapter" data-level="" data-path="pestimate.html"><a href="pestimate.html"><i class="fa fa-check"></i>点推定</a></li>
+<li class="chapter" data-level="" data-path="estimates.html"><a href="estimates.html"><i class="fa fa-check"></i>推定量もまた確率変数</a></li>
+<li class="chapter" data-level="" data-path="distribution.html"><a href="distribution.html"><i class="fa fa-check"></i>補足（いくつかの確率分布の関係性）</a>
+<ul>
+<li class="chapter" data-level="" data-path=""><a href="#%E6%AD%A3%E8%A6%8F%E5%88%86%E5%B8%83"><i class="fa fa-check"></i>正規分布</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#%E3%82%AB%E3%82%A4%E4%BA%8C%E4%B9%97%E5%88%86%E5%B8%83"><i class="fa fa-check"></i>カイ二乗分布</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#t%E5%88%86%E5%B8%83"><i class="fa fa-check"></i>t分布</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#f%E5%88%86%E5%B8%83"><i class="fa fa-check"></i>F分布</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="intinf.html"><a href="intinf.html"><i class="fa fa-check"></i>区間推定</a>
+<ul>
+<li class="chapter" data-level="" data-path=""><a href="#%E6%A8%99%E6%BA%96%E6%AD%A3%E8%A6%8F%E5%88%86%E5%B8%83%E3%81%AB%E5%9F%BA%E3%81%A5%E3%81%8F%E4%BF%A1%E9%A0%BC%E5%8C%BA%E9%96%93%E3%81%AE%E6%B1%82%E3%82%81%E6%96%B9"><i class="fa fa-check"></i>標準正規分布に基づく信頼区間の求め方*</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#t%E5%88%86%E5%B8%83%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%9F%E5%8C%BA%E9%96%93%E6%8E%A8%E5%AE%9A"><i class="fa fa-check"></i>t分布を使った区間推定*</a></li>
+<li class="chapter" data-level="" data-path="intinf.html"><a href="intinf.html#infwithR"><i class="fa fa-check"></i>Rによる区間推定</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="testtheory.html"><a href="testtheory.html"><i class="fa fa-check"></i>統計的仮説検定</a>
+<ul>
+<li class="chapter" data-level="" data-path="testtheory.html"><a href="testtheory.html#nullhypo"><i class="fa fa-check"></i>検定の手順と仮説</a></li>
+<li class="chapter" data-level="" data-path="testtheory.html"><a href="testtheory.html#twotail"><i class="fa fa-check"></i>母平均の検定（両側検定）に関する理屈</a></li>
+<li class="chapter" data-level="" data-path="testtheory.html"><a href="testtheory.html#onetail"><i class="fa fa-check"></i>片側検定の紹介</a></li>
+<li class="chapter" data-level="" data-path="testtheory.html"><a href="testtheory.html#errors"><i class="fa fa-check"></i>有意水準と検定における誤り</a></li>
+<li class="chapter" data-level="" data-path="testtheory.html"><a href="testtheory.html#testresults"><i class="fa fa-check"></i>検定結果に関する解釈</a></li>
+<li class="chapter" data-level="" data-path="testtheory.html"><a href="testtheory.html#lightbulb"><i class="fa fa-check"></i>電球データと検定</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="meancomparison.html"><a href="meancomparison.html"><i class="fa fa-check"></i>平均値に関するその他の検定</a></li>
+<li class="chapter" data-level="" data-path="ANOVA.html"><a href="ANOVA.html"><i class="fa fa-check"></i>分散分析</a>
+<ul>
+<li class="chapter" data-level="" data-path=""><a href="#%E5%88%86%E6%95%A3%E5%88%86%E6%9E%90%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%81%AE%E3%83%A2%E3%83%87%E3%83%AB%E8%A1%A8%E7%8F%BEanoatheory"><i class="fa fa-check"></i>分散分析についてのモデル表現*{#ANOAtheory}</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#%E4%BA%8C%E5%85%83%E9%85%8D%E7%BD%AE%E5%88%86%E6%95%A3%E5%88%86%E6%9E%90twowayanoa"><i class="fa fa-check"></i>二元配置分散分析*{#twowayANOA}</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#%E4%BA%8C%E5%85%83%E9%85%8D%E7%BD%AE%E3%83%A2%E3%83%87%E3%83%AB%E3%81%AE%E5%8A%B9%E6%9E%9C%E6%A4%9C%E5%AE%9Atwowaytest"><i class="fa fa-check"></i>二元配置モデルの効果検定*{#twowaytest}</a></li>
+<li class="chapter" data-level="" data-path="ANOVA.html"><a href="ANOVA.html#tukey"><i class="fa fa-check"></i>多重比較とそれに伴う統計的問題</a></li>
+<li class="chapter" data-level="" data-path="ANOVA.html"><a href="ANOVA.html#ANOVAwithR"><i class="fa fa-check"></i>Rによる分散分析の実行</a></li>
+<li class="chapter" data-level="" data-path="ANOVA.html"><a href="ANOVA.html#ANOVAandReg"><i class="fa fa-check"></i>回帰分析と分散分析の関係</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="pwr.html"><a href="pwr.html"><i class="fa fa-check"></i>検定力分析とサンプルサイズ</a></li>
+<li class="chapter" data-level="" data-path="ch4reference.html"><a href="ch4reference.html"><i class="fa fa-check"></i>参考文献</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="regintro.html"><a href="regintro.html"><i class="fa fa-check"></i>回帰分析</a>
+<ul>
+<li class="chapter" data-level="" data-path="ch5Intro.html"><a href="ch5Intro.html"><i class="fa fa-check"></i>本章の概要</a></li>
+<li class="chapter" data-level="" data-path="regpreparation.html"><a href="regpreparation.html"><i class="fa fa-check"></i>分析準備</a></li>
+<li class="chapter" data-level="" data-path="prediction.html"><a href="prediction.html"><i class="fa fa-check"></i>単回帰モデルと予測値</a>
+<ul>
+<li class="chapter" data-level="" data-path="prediction.html"><a href="prediction.html#lmmodel"><i class="fa fa-check"></i>企業データを用いた回帰分析の実行</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="multiplereg.html"><a href="multiplereg.html"><i class="fa fa-check"></i>重回帰モデル</a>
+<ul>
+<li class="chapter" data-level="" data-path="multiplereg.html"><a href="multiplereg.html#mregIntro"><i class="fa fa-check"></i>重回帰モデル概要</a></li>
+<li class="chapter" data-level="" data-path="multiplereg.html"><a href="multiplereg.html#mreginterpret"><i class="fa fa-check"></i>回帰係数の解釈</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="modelcomp.html"><a href="modelcomp.html"><i class="fa fa-check"></i>単回帰モデルと重回帰モデルの比較</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><i class="fa fa-check"></i>参考文献</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="regtechnic.html"><a href="regtechnic.html"><i class="fa fa-check"></i>回帰分析上の工夫紹介</a>
+<ul>
+<li class="chapter" data-level="" data-path="ch6Intro.html"><a href="ch6Intro.html"><i class="fa fa-check"></i>本章の概要</a></li>
+<li class="chapter" data-level="" data-path="dummy.html"><a href="dummy.html"><i class="fa fa-check"></i>ダミー変数</a>
+<ul>
+<li class="chapter" data-level="" data-path="dummy.html"><a href="dummy.html#dummywithR"><i class="fa fa-check"></i>企業データを用いた分析の実行</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="interaction.html"><a href="interaction.html"><i class="fa fa-check"></i>交差項</a>
+<ul>
+<li class="chapter" data-level="" data-path="interaction.html"><a href="interaction.html#slopedummy"><i class="fa fa-check"></i>傾きダミー</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#%E5%82%BE%E3%81%8D%E3%83%80%E3%83%9F%E3%83%BC%E3%81%AE%E5%AE%9F%E8%A1%8Cslopedummywithr"><i class="fa fa-check"></i>傾きダミーの実行{slopedummywithR}</a></li>
+<li class="chapter" data-level="" data-path="interaction.html"><a href="interaction.html#id_5"><i class="fa fa-check"></i>量的変数同士の交差項</a></li>
+<li class="chapter" data-level="" data-path="interaction.html"><a href="interaction.html#interactionwithR"><i class="fa fa-check"></i>交差項モデルの実行</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="coefComparison.html"><a href="coefComparison.html"><i class="fa fa-check"></i>係数比較</a>
+<ul>
+<li class="chapter" data-level="" data-path="coefComparison.html"><a href="coefComparison.html#coefComparisonwithR"><i class="fa fa-check"></i>係数比較の実行</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="logLinearModel.html"><a href="logLinearModel.html"><i class="fa fa-check"></i>対数線形</a>
+<ul>
+<li class="chapter" data-level="" data-path="logLinearModel.html"><a href="logLinearModel.html#logLinearwithR"><i class="fa fa-check"></i>対数線形モデルの分析実行</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#%E9%9C%80%E8%A6%81%E3%81%AE%E4%BE%A1%E6%A0%BC%E5%BC%BE%E5%8A%9B%E6%80%A7%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6elasticity"><i class="fa fa-check"></i>需要の価格弾力性について*{#elasticity}</a></li>
+<li class="chapter" data-level="" data-path="logLinearModel.html"><a href="logLinearModel.html#linearTest"><i class="fa fa-check"></i>対数線形の推定と検定</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="ch6Reference.html"><a href="ch6Reference.html"><i class="fa fa-check"></i>参考文献</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">マーケティング・データ分析補足資料</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="dummy" class="section level2 hasAnchor">
+<h2>ダミー変数<a href="dummy.html#dummy" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>本節では、説明変数としてカテゴリ変数を用いる場合の方法と、その結果の解釈について説明する。マーケティング領域の研究においては、あるカテゴリに属することが成果変数にどのような影響を与えるのかという問いに関心を持つことも多い。そのような場合には、「ダミー変数」と呼ばれる形にカテゴリ変数を定義し、分析を行う。ダミー変数とは、特定のカテゴリに属するならば1を、それ以外なら0を取るような変数を指す。例えば、女性ならば1、それ以外の性別であれば0を取るようなダミー変数を、「女性ダミー」として扱うことができる。ダミー変数 <em>D</em> を用いた回帰モデルは以下の様に表すことができる。</p>
+<p><span class="math display">\[
+y_i=\alpha+\beta x_i + \gamma D_i+u_i
+\]</span>
+ただし、<span class="math inline">\(x_i\)</span> は連続尺度の説明変数である。ダミー変数は取りうる値が1か0に限定されているため、<em>y</em> の条件付期待値は以下のように解釈できる。</p>
+<p><span class="math display">\[
+E(y_i|D_i=1)=\alpha+\beta x_i + \gamma
+\]</span></p>
+<p><span class="math display">\[
+E(y_i|D_i=0)=\alpha+\beta x_i
+\]</span></p>
+<p>つまり、ダミー変数に対応する回帰係数はベースライン（<span class="math inline">\(D_i=0\)</span>）グループとの「切片の差」を表しているということがわかる。例えば、<span class="math inline">\(\small \alpha\)</span>、<span class="math inline">\(\small \beta\)</span>と、<span class="math inline">\(\small \gamma\)</span>が正の値を取るような場合、上記のダミー変数の関係は以下の図のように示す事ができる。例えば、このダミー変数が女性ダミーであるならば、女性はその他の性別に比べて、<em>y</em> の値が相対的に高い、と解釈できる。</p>
+<div class="float">
+<img src="reg/dummy.png" style="width:70.0%" alt="ダミー変数イメージ図" />
+<div class="figcaption">ダミー変数イメージ図</div>
+</div>
+<p>ダミー変数を説明変数に含む回帰分析をRで実行することはとても簡単である。<code>lm()</code> 関数内のモデル定義において、カテゴリ変数を含めば良いだけである。Characterという文字列情報のデータ型で示されているカテゴリ変数を用いると、自動でダミー変数化して、回帰分析を実行してくれる。</p>
+<div id="dummywithR" class="section level3 hasAnchor">
+<h3>企業データを用いた分析の実行<a href="dummy.html#dummywithR" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>本章で使っている firmdata19 を使ってダミー変数を用いた回帰分析を行ってみる。具体的には、営業利益率（営業利益/売上）が小売産業に属する企業とそれ以外で異なるかを分析する。しかし、本データセット上には、このような分類に対応するカテゴリー変数は存在しないため変数を作成する必要がある。具体的には、以下のように、“Retail Stores, NEC” もしくは “Supermarket Chains” のどちらかに含まれる企業であれば1、それ以外であれば0を取るカテゴリー変数（<code>format</code>）を作成する。<code>%in%</code> は二つのベクトル間の要素の一致を確認するための演算子で、下記<code>mutate</code>コマンドでは、<code>ind_en</code> 列に書かれている情報が <code>retail</code> リストに「含まれる」か否かをチェックしている。そのため、以下コマンドでは、事前に作成した <code>retail</code> を参照し、<code>ind_en</code> で観察されるカテゴリーが <code>retail</code> に当てはまれば、<code>"Retail"</code>を、そうでなければ、<code>"Others"</code> を返すように指示していることになる。</p>
+<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="dummy.html#cb183-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<pre><code>## ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+## ✔ dplyr     1.1.4     ✔ readr     2.1.5
+## ✔ forcats   1.0.0     ✔ stringr   1.5.1
+## ✔ ggplot2   3.5.2     ✔ tibble    3.3.0
+## ✔ lubridate 1.9.4     ✔ tidyr     1.3.1
+## ✔ purrr     1.0.4     
+## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+## ✖ dplyr::filter() masks stats::filter()
+## ✖ dplyr::lag()    masks stats::lag()
+## ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="dummy.html#cb185-1" tabindex="-1"></a>firmdata <span class="ot">&lt;-</span> readxl<span class="sc">::</span><span class="fu">read_xlsx</span>(<span class="st">&quot;data/MktRes_firmdata.xlsx&quot;</span>)</span>
+<span id="cb185-2"><a href="dummy.html#cb185-2" tabindex="-1"></a>firmdata19 <span class="ot">&lt;-</span> firmdata <span class="sc">%&gt;%</span> </span>
+<span id="cb185-3"><a href="dummy.html#cb185-3" tabindex="-1"></a>  <span class="fu">filter</span>(fyear <span class="sc">==</span> <span class="dv">2019</span>)</span>
+<span id="cb185-4"><a href="dummy.html#cb185-4" tabindex="-1"></a><span class="co">#産業名を特定したオブジェクト&quot;Retail&quot;の作成</span></span>
+<span id="cb185-5"><a href="dummy.html#cb185-5" tabindex="-1"></a>retail <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Retail Stores, NEC&quot;</span>, <span class="st">&quot;Supermarket Chains&quot;</span>, <span class="st">&quot;Department Stores&quot;</span>)</span>
+<span id="cb185-6"><a href="dummy.html#cb185-6" tabindex="-1"></a><span class="co"># Retailを使ったカテゴリー変数の作成</span></span>
+<span id="cb185-7"><a href="dummy.html#cb185-7" tabindex="-1"></a>firmdata19 <span class="ot">&lt;-</span> firmdata19 <span class="sc">%&gt;%</span> </span>
+<span id="cb185-8"><a href="dummy.html#cb185-8" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">format =</span> <span class="fu">ifelse</span>(ind_en <span class="sc">%in%</span> retail, <span class="st">&quot;Retail&quot;</span>, <span class="st">&quot;Other&quot;</span>))</span>
+<span id="cb185-9"><a href="dummy.html#cb185-9" tabindex="-1"></a><span class="co">#カテゴリーの頻度チェック</span></span>
+<span id="cb185-10"><a href="dummy.html#cb185-10" tabindex="-1"></a><span class="fu">with</span>(firmdata19, <span class="fu">table</span>(format))</span></code></pre></div>
+<pre><code>## format
+##  Other Retail 
+##     90     56</code></pre>
+<p>そして、作成したカテゴリー変数も含めて、以下のような回帰モデルを分析する。</p>
+<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="dummy.html#cb187-1" tabindex="-1"></a>fit.d1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(op <span class="sc">~</span> mkexp <span class="sc">+</span> format, <span class="at">data =</span> firmdata19)</span>
+<span id="cb187-2"><a href="dummy.html#cb187-2" tabindex="-1"></a><span class="fu">summary</span>(fit.d1)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = op ~ mkexp + format, data = firmdata19)
+## 
+## Residuals:
+##       Min        1Q    Median        3Q       Max 
+## -0.095926 -0.031427 -0.008661  0.014345  0.261068 
+## 
+## Coefficients:
+##               Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)   0.101694   0.008833  11.514  &lt; 2e-16 ***
+## mkexp        -0.066003   0.024959  -2.644 0.009097 ** 
+## formatRetail -0.031770   0.009303  -3.415 0.000831 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.05368 on 143 degrees of freedom
+## Multiple R-squared:  0.1379, Adjusted R-squared:  0.1258 
+## F-statistic: 11.44 on 2 and 143 DF,  p-value: 2.469e-05</code></pre>
+<p>上記のように、カテゴリー変数（format）を回帰モデルに含めるだけで、自動的にダミー変数化して分析を実行してくれる。今回はたまたま我々の意図通り Othersをベースライングループに設定されているが、これは、指示した結果ではない。　 もし確実に特定のカテゴリーを1と定義したい場合には、自身でダミー変数を作成して回帰分析を行えばいい。</p>
+<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="dummy.html#cb189-1" tabindex="-1"></a>firmdata19 <span class="ot">&lt;-</span> firmdata19 <span class="sc">%&gt;%</span> </span>
+<span id="cb189-2"><a href="dummy.html#cb189-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">retail =</span> <span class="fu">ifelse</span>(format <span class="sc">==</span> <span class="st">&quot;Retail&quot;</span>, <span class="dv">1</span>, <span class="dv">0</span>))</span>
+<span id="cb189-3"><a href="dummy.html#cb189-3" tabindex="-1"></a></span>
+<span id="cb189-4"><a href="dummy.html#cb189-4" tabindex="-1"></a><span class="co">#確認</span></span>
+<span id="cb189-5"><a href="dummy.html#cb189-5" tabindex="-1"></a><span class="fu">with</span>(firmdata19, <span class="fu">table</span>(retail, format))</span></code></pre></div>
+<pre><code>##       format
+## retail Other Retail
+##      0    90      0
+##      1     0     56</code></pre>
+<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="dummy.html#cb191-1" tabindex="-1"></a>fit.d2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(op <span class="sc">~</span>  mkexp <span class="sc">+</span> retail, <span class="at">data =</span> firmdata19)</span>
+<span id="cb191-2"><a href="dummy.html#cb191-2" tabindex="-1"></a><span class="fu">summary</span>(fit.d2)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = op ~ mkexp + retail, data = firmdata19)
+## 
+## Residuals:
+##       Min        1Q    Median        3Q       Max 
+## -0.095926 -0.031427 -0.008661  0.014345  0.261068 
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  0.101694   0.008833  11.514  &lt; 2e-16 ***
+## mkexp       -0.066003   0.024959  -2.644 0.009097 ** 
+## retail      -0.031770   0.009303  -3.415 0.000831 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.05368 on 143 degrees of freedom
+## Multiple R-squared:  0.1379, Adjusted R-squared:  0.1258 
+## F-statistic: 11.44 on 2 and 143 DF,  p-value: 2.469e-05</code></pre>
+<p>分析の結果、マーケティング支出と小売ダミーのどちらも営業利益率に対して負に有意な影響を持つことがわかった。したがって、小売企業はデータセット内の他の産業よりも利益率が低いといえる。</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="ch6Intro.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="interaction.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/USERNAME/REPO/edit/BRANCH/05-reg2.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection",
+    "scroll_highlight": true
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
