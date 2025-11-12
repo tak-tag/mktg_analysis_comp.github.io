@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>需要の予測と本章のまとめ | マーケティング・データ分析補足資料</title>
+  <meta name="description" content="需要の予測と本章のまとめ | マーケティング・データ分析補足資料" />
+  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="需要の予測と本章のまとめ | マーケティング・データ分析補足資料" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta name="github-repo" content="https://github.com/tak-tag/mktg_analysis_comp.github.io" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="需要の予測と本章のまとめ | マーケティング・データ分析補足資料" />
+  
+  
+  
+
+
+
+<meta name="date" content="2025-11-12" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="mlogit.html"/>
+<link rel="next" href="Ch7Reference.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>本ウェブサイトについて</a></li>
+<li class="chapter" data-level="" data-path="rusage.html"><a href="rusage.html"><i class="fa fa-check"></i>R と R studioに慣れる</a>
+<ul>
+<li class="chapter" data-level="" data-path="ch2intro.html"><a href="ch2intro.html"><i class="fa fa-check"></i>本章の概要</a></li>
+<li class="chapter" data-level="" data-path="desktop.html"><a href="desktop.html"><i class="fa fa-check"></i>R studio デスクトップ版の利用</a></li>
+<li class="chapter" data-level="" data-path="project.html"><a href="project.html"><i class="fa fa-check"></i>プロジェクト機能について</a></li>
+<li class="chapter" data-level="" data-path="basics.html"><a href="basics.html"><i class="fa fa-check"></i>Rの基本操作</a></li>
+<li class="chapter" data-level="" data-path="rscript.html"><a href="rscript.html"><i class="fa fa-check"></i>R スクリプトのすゝめ</a>
+<ul>
+<li class="chapter" data-level="" data-path="rscript.html"><a href="rscript.html#writeRscript"><i class="fa fa-check"></i>Rスクリプトを書く</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="ch2summary.html"><a href="ch2summary.html"><i class="fa fa-check"></i>本章のまとめ</a></li>
+<li class="chapter" data-level="" data-path="positcloud.html"><a href="positcloud.html"><i class="fa fa-check"></i>コラム：Posit cloudを使ってみる</a></li>
+<li class="chapter" data-level="" data-path="ch2reference.html"><a href="ch2reference.html"><i class="fa fa-check"></i>参考文献</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="handling.html"><a href="handling.html"><i class="fa fa-check"></i>データ整理と要約・可視化</a>
+<ul>
+<li class="chapter" data-level="" data-path="Ch3intro.html"><a href="Ch3intro.html"><i class="fa fa-check"></i>本章の概要</a></li>
+<li class="chapter" data-level="" data-path="readData.html"><a href="readData.html"><i class="fa fa-check"></i>データの読み込み</a></li>
+<li class="chapter" data-level="" data-path="normalization.html"><a href="normalization.html"><i class="fa fa-check"></i>データの整形</a>
+<ul>
+<li class="chapter" data-level="" data-path=""><a href="#tidyverse-%E3%81%AE%E6%B4%BB%E7%94%A8"><i class="fa fa-check"></i>tidyverse の活用</a></li>
+<li class="chapter" data-level="" data-path="normalization.html"><a href="normalization.html#firmdata"><i class="fa fa-check"></i>企業データの処理</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="summary.html"><a href="summary.html"><i class="fa fa-check"></i>データの要約と可視化</a>
+<ul>
+<li class="chapter" data-level="" data-path="summary.html"><a href="summary.html#descriptiveStat"><i class="fa fa-check"></i>記述統計</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="categoricalVar.html"><a href="categoricalVar.html"><i class="fa fa-check"></i>カテゴリ変数の要約</a></li>
+<li class="chapter" data-level="" data-path="visualization.html"><a href="visualization.html"><i class="fa fa-check"></i>データの可視化</a></li>
+<li class="chapter" data-level="" data-path="cor.html"><a href="cor.html"><i class="fa fa-check"></i>二変数間の関係の要約</a></li>
+<li class="chapter" data-level="" data-path="ch3reference.html"><a href="ch3reference.html"><i class="fa fa-check"></i>参考文献</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="test.html"><a href="test.html"><i class="fa fa-check"></i>基礎統計学復習</a>
+<ul>
+<li class="chapter" data-level="" data-path="ch4Intro.html"><a href="ch4Intro.html"><i class="fa fa-check"></i>本章の概要</a></li>
+<li class="chapter" data-level="" data-path="probability.html"><a href="probability.html"><i class="fa fa-check"></i>確率モデル、期待値と分散</a>
+<ul>
+<li class="chapter" data-level="" data-path="probability.html"><a href="probability.html#discrete"><i class="fa fa-check"></i>確率と離散確率変数</a></li>
+<li class="chapter" data-level="" data-path="probability.html"><a href="probability.html#continuous"><i class="fa fa-check"></i>連続確率変数</a></li>
+<li class="chapter" data-level="" data-path="probability.html"><a href="probability.html#expectation"><i class="fa fa-check"></i>期待値</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="inference.html"><a href="inference.html"><i class="fa fa-check"></i>統計的推測</a></li>
+<li class="chapter" data-level="" data-path="pestimate.html"><a href="pestimate.html"><i class="fa fa-check"></i>点推定</a></li>
+<li class="chapter" data-level="" data-path="estimates.html"><a href="estimates.html"><i class="fa fa-check"></i>推定量もまた確率変数</a></li>
+<li class="chapter" data-level="" data-path="distribution.html"><a href="distribution.html"><i class="fa fa-check"></i>補足（いくつかの確率分布の関係性）</a>
+<ul>
+<li class="chapter" data-level="" data-path=""><a href="#%E6%AD%A3%E8%A6%8F%E5%88%86%E5%B8%83"><i class="fa fa-check"></i>正規分布</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#%E3%82%AB%E3%82%A4%E4%BA%8C%E4%B9%97%E5%88%86%E5%B8%83"><i class="fa fa-check"></i>カイ二乗分布</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#t%E5%88%86%E5%B8%83"><i class="fa fa-check"></i>t分布</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#f%E5%88%86%E5%B8%83"><i class="fa fa-check"></i>F分布</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="intinf.html"><a href="intinf.html"><i class="fa fa-check"></i>区間推定</a>
+<ul>
+<li class="chapter" data-level="" data-path=""><a href="#%E6%A8%99%E6%BA%96%E6%AD%A3%E8%A6%8F%E5%88%86%E5%B8%83%E3%81%AB%E5%9F%BA%E3%81%A5%E3%81%8F%E4%BF%A1%E9%A0%BC%E5%8C%BA%E9%96%93%E3%81%AE%E6%B1%82%E3%82%81%E6%96%B9"><i class="fa fa-check"></i>標準正規分布に基づく信頼区間の求め方*</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#t%E5%88%86%E5%B8%83%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%9F%E5%8C%BA%E9%96%93%E6%8E%A8%E5%AE%9A"><i class="fa fa-check"></i>t分布を使った区間推定*</a></li>
+<li class="chapter" data-level="" data-path="intinf.html"><a href="intinf.html#infwithR"><i class="fa fa-check"></i>Rによる区間推定</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="testtheory.html"><a href="testtheory.html"><i class="fa fa-check"></i>統計的仮説検定</a>
+<ul>
+<li class="chapter" data-level="" data-path="testtheory.html"><a href="testtheory.html#nullhypo"><i class="fa fa-check"></i>検定の手順と仮説</a></li>
+<li class="chapter" data-level="" data-path="testtheory.html"><a href="testtheory.html#twotail"><i class="fa fa-check"></i>母平均の検定（両側検定）に関する理屈</a></li>
+<li class="chapter" data-level="" data-path="testtheory.html"><a href="testtheory.html#onetail"><i class="fa fa-check"></i>片側検定の紹介</a></li>
+<li class="chapter" data-level="" data-path="testtheory.html"><a href="testtheory.html#errors"><i class="fa fa-check"></i>有意水準と検定における誤り</a></li>
+<li class="chapter" data-level="" data-path="testtheory.html"><a href="testtheory.html#testresults"><i class="fa fa-check"></i>検定結果に関する解釈</a></li>
+<li class="chapter" data-level="" data-path="testtheory.html"><a href="testtheory.html#lightbulb"><i class="fa fa-check"></i>電球データと検定</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="meancomparison.html"><a href="meancomparison.html"><i class="fa fa-check"></i>平均値に関するその他の検定</a></li>
+<li class="chapter" data-level="" data-path="ANOVA.html"><a href="ANOVA.html"><i class="fa fa-check"></i>分散分析</a>
+<ul>
+<li class="chapter" data-level="" data-path=""><a href="#%E5%88%86%E6%95%A3%E5%88%86%E6%9E%90%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%81%AE%E3%83%A2%E3%83%87%E3%83%AB%E8%A1%A8%E7%8F%BEanoatheory"><i class="fa fa-check"></i>分散分析についてのモデル表現*{#ANOAtheory}</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#%E4%BA%8C%E5%85%83%E9%85%8D%E7%BD%AE%E5%88%86%E6%95%A3%E5%88%86%E6%9E%90twowayanoa"><i class="fa fa-check"></i>二元配置分散分析*{#twowayANOA}</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#%E4%BA%8C%E5%85%83%E9%85%8D%E7%BD%AE%E3%83%A2%E3%83%87%E3%83%AB%E3%81%AE%E5%8A%B9%E6%9E%9C%E6%A4%9C%E5%AE%9Atwowaytest"><i class="fa fa-check"></i>二元配置モデルの効果検定*{#twowaytest}</a></li>
+<li class="chapter" data-level="" data-path="ANOVA.html"><a href="ANOVA.html#tukey"><i class="fa fa-check"></i>多重比較とそれに伴う統計的問題</a></li>
+<li class="chapter" data-level="" data-path="ANOVA.html"><a href="ANOVA.html#ANOVAwithR"><i class="fa fa-check"></i>Rによる分散分析の実行</a></li>
+<li class="chapter" data-level="" data-path="ANOVA.html"><a href="ANOVA.html#ANOVAandReg"><i class="fa fa-check"></i>回帰分析と分散分析の関係</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="pwr.html"><a href="pwr.html"><i class="fa fa-check"></i>検定力分析とサンプルサイズ</a></li>
+<li class="chapter" data-level="" data-path="ch4reference.html"><a href="ch4reference.html"><i class="fa fa-check"></i>参考文献</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="regintro.html"><a href="regintro.html"><i class="fa fa-check"></i>回帰分析</a>
+<ul>
+<li class="chapter" data-level="" data-path="ch5Intro.html"><a href="ch5Intro.html"><i class="fa fa-check"></i>本章の概要</a></li>
+<li class="chapter" data-level="" data-path="regpreparation.html"><a href="regpreparation.html"><i class="fa fa-check"></i>分析準備</a></li>
+<li class="chapter" data-level="" data-path="prediction.html"><a href="prediction.html"><i class="fa fa-check"></i>単回帰モデルと予測値</a>
+<ul>
+<li class="chapter" data-level="" data-path="prediction.html"><a href="prediction.html#lmmodel"><i class="fa fa-check"></i>企業データを用いた回帰分析の実行</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="multiplereg.html"><a href="multiplereg.html"><i class="fa fa-check"></i>重回帰モデル</a>
+<ul>
+<li class="chapter" data-level="" data-path="multiplereg.html"><a href="multiplereg.html#mregIntro"><i class="fa fa-check"></i>重回帰モデル概要</a></li>
+<li class="chapter" data-level="" data-path="multiplereg.html"><a href="multiplereg.html#mreginterpret"><i class="fa fa-check"></i>回帰係数の解釈</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="modelcomp.html"><a href="modelcomp.html"><i class="fa fa-check"></i>単回帰モデルと重回帰モデルの比較</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><i class="fa fa-check"></i>参考文献</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="regtechnic.html"><a href="regtechnic.html"><i class="fa fa-check"></i>回帰分析上の工夫紹介</a>
+<ul>
+<li class="chapter" data-level="" data-path="ch6Intro.html"><a href="ch6Intro.html"><i class="fa fa-check"></i>本章の概要</a></li>
+<li class="chapter" data-level="" data-path="dummy.html"><a href="dummy.html"><i class="fa fa-check"></i>ダミー変数</a>
+<ul>
+<li class="chapter" data-level="" data-path="dummy.html"><a href="dummy.html#dummywithR"><i class="fa fa-check"></i>企業データを用いた分析の実行</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="interaction.html"><a href="interaction.html"><i class="fa fa-check"></i>交差項</a>
+<ul>
+<li class="chapter" data-level="" data-path="interaction.html"><a href="interaction.html#slopedummy"><i class="fa fa-check"></i>傾きダミー</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#%E5%82%BE%E3%81%8D%E3%83%80%E3%83%9F%E3%83%BC%E3%81%AE%E5%AE%9F%E8%A1%8Cslopedummywithr"><i class="fa fa-check"></i>傾きダミーの実行{slopedummywithR}</a></li>
+<li class="chapter" data-level="" data-path="interaction.html"><a href="interaction.html#id_5"><i class="fa fa-check"></i>量的変数同士の交差項</a></li>
+<li class="chapter" data-level="" data-path="interaction.html"><a href="interaction.html#interactionwithR"><i class="fa fa-check"></i>交差項モデルの実行</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="coefComparison.html"><a href="coefComparison.html"><i class="fa fa-check"></i>係数比較</a>
+<ul>
+<li class="chapter" data-level="" data-path="coefComparison.html"><a href="coefComparison.html#coefComparisonwithR"><i class="fa fa-check"></i>係数比較の実行</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="logLinearModel.html"><a href="logLinearModel.html"><i class="fa fa-check"></i>対数線形</a>
+<ul>
+<li class="chapter" data-level="" data-path="logLinearModel.html"><a href="logLinearModel.html#logLinearwithR"><i class="fa fa-check"></i>対数線形モデルの分析実行</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#%E9%9C%80%E8%A6%81%E3%81%AE%E4%BE%A1%E6%A0%BC%E5%BC%BE%E5%8A%9B%E6%80%A7%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6elasticity"><i class="fa fa-check"></i>需要の価格弾力性について*{#elasticity}</a></li>
+<li class="chapter" data-level="" data-path="logLinearModel.html"><a href="logLinearModel.html#linearTest"><i class="fa fa-check"></i>対数線形の推定と検定</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="ch6Reference.html"><a href="ch6Reference.html"><i class="fa fa-check"></i>参考文献</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="choice.html"><a href="choice.html"><i class="fa fa-check"></i>消費者の選択と離散選択モデル</a>
+<ul>
+<li class="chapter" data-level="" data-path="Ch7Intro.html"><a href="Ch7Intro.html"><i class="fa fa-check"></i>本章の概要</a></li>
+<li class="chapter" data-level="" data-path="discretechoice.html"><a href="discretechoice.html"><i class="fa fa-check"></i>離散選択モデル</a>
+<ul>
+<li class="chapter" data-level="" data-path="discretechoice.html"><a href="discretechoice.html#lpm"><i class="fa fa-check"></i>線形確率モデル</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#%E3%83%97%E3%83%AD%E3%83%93%E3%83%83%E3%83%88%E3%83%A2%E3%83%87%E3%83%AB%E3%81%A8%E3%83%AD%E3%82%B8%E3%83%83%E3%83%88%E3%83%A2%E3%83%87%E3%83%ABlogitprobit"><i class="fa fa-check"></i>プロビットモデルとロジットモデル*{#logitprobit}</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#%E6%BD%9C%E5%9C%A8%E5%A4%89%E6%95%B0%E3%82%A2%E3%83%97%E3%83%AD%E3%83%BC%E3%83%81%E3%81%AB%E3%82%88%E3%82%8B%E8%AA%AC%E6%98%8Elatentapproach"><i class="fa fa-check"></i>潜在変数アプローチによる説明*{#latentApproach}</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="probitwithR.html"><a href="probitwithR.html"><i class="fa fa-check"></i>プロビットモデルの推定と解釈</a>
+<ul>
+<li class="chapter" data-level="" data-path="probitwithR.html"><a href="probitwithR.html#probitSummary"><i class="fa fa-check"></i>分析の実行と結果のまとめ</a></li>
+<li class="chapter" data-level="" data-path="probitwithR.html"><a href="probitwithR.html#marginaleffectwithR"><i class="fa fa-check"></i>限界効果の計算</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#%E9%99%90%E7%95%8C%E5%8A%B9%E6%9E%9C%E3%81%8C%E3%81%AA%E3%81%9C%E5%BF%85%E8%A6%81%E3%81%8Bwhymarginal"><i class="fa fa-check"></i>限界効果がなぜ必要か？*{#whymarginal}</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="ml.html"><a href="ml.html"><i class="fa fa-check"></i>補足：最尤推定法の紹介</a></li>
+<li class="chapter" data-level="" data-path="Mcfadden.html"><a href="Mcfadden.html"><i class="fa fa-check"></i>離散選択モデルへの合理的消費者像の応用</a></li>
+<li class="chapter" data-level="" data-path="mlogit.html"><a href="mlogit.html"><i class="fa fa-check"></i>多項選択モデル紹介</a></li>
+<li class="chapter" data-level="" data-path="choiceAndPrediction.html"><a href="choiceAndPrediction.html"><i class="fa fa-check"></i>需要の予測と本章のまとめ</a></li>
+<li class="chapter" data-level="" data-path="Ch7Reference.html"><a href="Ch7Reference.html"><i class="fa fa-check"></i>参考文献</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">マーケティング・データ分析補足資料</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="choiceAndPrediction" class="section level2 hasAnchor">
+<h2>需要の予測と本章のまとめ<a href="choiceAndPrediction.html#choiceAndPrediction" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>ここまでは、離散選択モデルを用いて消費者の選択に関わるパラメータを推定する方法について紹介してきた。これを用いることで、モデルに基づく各選択肢の選択確率を計算することが可能になる。例えば以下では、先ほど推定した2項選択モデルである <code>probit2</code> を用いて、推定結果から選択確率の予測値を計算する。</p>
+<div class="sourceCode" id="cb247"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb247-1"><a href="choiceAndPrediction.html#cb247-1" tabindex="-1"></a><span class="co">#パラメータの推定値(beta)の抽出</span></span>
+<span id="cb247-2"><a href="choiceAndPrediction.html#cb247-2" tabindex="-1"></a>beta <span class="ot">&lt;-</span> probit2<span class="sc">$</span>coefficients</span>
+<span id="cb247-3"><a href="choiceAndPrediction.html#cb247-3" tabindex="-1"></a><span class="co">#パラメータ betaと説明変数の線形結合を作成（beta_0は定数項なので1をかける）</span></span>
+<span id="cb247-4"><a href="choiceAndPrediction.html#cb247-4" tabindex="-1"></a>est_probit2 <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="dv">1</span>, choice_df<span class="sc">$</span>p_ratio, choice_df<span class="sc">$</span>a1, </span>
+<span id="cb247-5"><a href="choiceAndPrediction.html#cb247-5" tabindex="-1"></a>                      choice_df<span class="sc">$</span>a2) <span class="sc">%*%</span> beta</span>
+<span id="cb247-6"><a href="choiceAndPrediction.html#cb247-6" tabindex="-1"></a>  </span>
+<span id="cb247-7"><a href="choiceAndPrediction.html#cb247-7" tabindex="-1"></a><span class="co">#pnormによって標準正規分布の分布関数による計算を実行する。</span></span>
+<span id="cb247-8"><a href="choiceAndPrediction.html#cb247-8" tabindex="-1"></a><span class="co">#製品1(c1) を選ぶ確率の予測値</span></span>
+<span id="cb247-9"><a href="choiceAndPrediction.html#cb247-9" tabindex="-1"></a>pred_probit_c1 <span class="ot">&lt;-</span> <span class="fu">pnorm</span>(est_probit2)</span>
+<span id="cb247-10"><a href="choiceAndPrediction.html#cb247-10" tabindex="-1"></a><span class="fu">mean</span>(pred_probit_c1)</span></code></pre></div>
+<pre><code>## [1] 0.4789384</code></pre>
+<div class="sourceCode" id="cb249"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb249-1"><a href="choiceAndPrediction.html#cb249-1" tabindex="-1"></a><span class="co">#ロジットモデルの場合</span></span>
+<span id="cb249-2"><a href="choiceAndPrediction.html#cb249-2" tabindex="-1"></a>logit2 <span class="ot">&lt;-</span> <span class="fu">glm</span>(y1 <span class="sc">~</span> p_ratio <span class="sc">+</span> a1 <span class="sc">+</span> a2, </span>
+<span id="cb249-3"><a href="choiceAndPrediction.html#cb249-3" tabindex="-1"></a>               <span class="at">family =</span> <span class="fu">binomial</span>(<span class="at">link =</span> logit),</span>
+<span id="cb249-4"><a href="choiceAndPrediction.html#cb249-4" tabindex="-1"></a>               <span class="at">data =</span> choice_df)</span>
+<span id="cb249-5"><a href="choiceAndPrediction.html#cb249-5" tabindex="-1"></a>beta_logit <span class="ot">&lt;-</span> logit2<span class="sc">$</span>coefficients</span>
+<span id="cb249-6"><a href="choiceAndPrediction.html#cb249-6" tabindex="-1"></a>est_logit2 <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="dv">1</span>, choice_df<span class="sc">$</span>p_ratio, choice_df<span class="sc">$</span>a1, </span>
+<span id="cb249-7"><a href="choiceAndPrediction.html#cb249-7" tabindex="-1"></a>                      choice_df<span class="sc">$</span>a2) <span class="sc">%*%</span> beta_logit</span>
+<span id="cb249-8"><a href="choiceAndPrediction.html#cb249-8" tabindex="-1"></a>pred_logit_c1 <span class="ot">&lt;-</span> (<span class="fu">exp</span>(est_logit2))<span class="sc">/</span>(<span class="dv">1</span><span class="sc">+</span><span class="fu">exp</span>(est_logit2))</span>
+<span id="cb249-9"><a href="choiceAndPrediction.html#cb249-9" tabindex="-1"></a><span class="fu">mean</span>(pred_logit_c1)</span></code></pre></div>
+<pre><code>## [1] 0.479</code></pre>
+<p><code>probit2</code> モデルにおける製品1の選択確率は約 <span class="math inline">\(47.9\%\)</span> であり、製品2とほぼ半分ずつ分け合っているが、わずかに製品2の選択確率のほうが高いことが伺える。ここで、製品1の企業が値下げを行ったら、選択確率はどの様に変化するのだろうか。このような架空の状況について、今回の分析結果（パラメータの推定値）を用いて予測してみる。<code>choice_df</code> における <code>p1</code> の平均はおよそ10（千円）である。仮に、製品2の価格を変えず、製品1の価格を平均価格の <span class="math inline">\(10\%\)</span> （1000円）値引き（<span class="math inline">\(p1-1\)</span>）した場合の価格差を考える。</p>
+<div class="sourceCode" id="cb251"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb251-1"><a href="choiceAndPrediction.html#cb251-1" tabindex="-1"></a>choice_df_v <span class="ot">&lt;-</span> choice_df <span class="sc">%&gt;%</span> </span>
+<span id="cb251-2"><a href="choiceAndPrediction.html#cb251-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">p1_v =</span> p1 <span class="sc">-</span> <span class="dv">1</span>,</span>
+<span id="cb251-3"><a href="choiceAndPrediction.html#cb251-3" tabindex="-1"></a>         <span class="at">p_ratio_v =</span> p1_v <span class="sc">-</span> p2)</span>
+<span id="cb251-4"><a href="choiceAndPrediction.html#cb251-4" tabindex="-1"></a>est_probit_v <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="dv">1</span>, choice_df_v<span class="sc">$</span>p_ratio_v, choice_df_v<span class="sc">$</span>a1, </span>
+<span id="cb251-5"><a href="choiceAndPrediction.html#cb251-5" tabindex="-1"></a>                      choice_df_v<span class="sc">$</span>a2) <span class="sc">%*%</span> beta</span>
+<span id="cb251-6"><a href="choiceAndPrediction.html#cb251-6" tabindex="-1"></a></span>
+<span id="cb251-7"><a href="choiceAndPrediction.html#cb251-7" tabindex="-1"></a><span class="co">#pnormによって標準正規分布の分布関数による計算を実行する。</span></span>
+<span id="cb251-8"><a href="choiceAndPrediction.html#cb251-8" tabindex="-1"></a><span class="co">#製品1(c1) を選ぶ確率の予測値</span></span>
+<span id="cb251-9"><a href="choiceAndPrediction.html#cb251-9" tabindex="-1"></a>pred_probit_v <span class="ot">&lt;-</span> <span class="fu">pnorm</span>(est_probit_v)</span>
+<span id="cb251-10"><a href="choiceAndPrediction.html#cb251-10" tabindex="-1"></a><span class="fu">mean</span>(pred_probit_v)</span></code></pre></div>
+<pre><code>## [1] 0.5459071</code></pre>
+<p>分析の結果、1000円の値下げによって企業1は製品の選択確率を約<span class="math inline">\(54.6\%\)</span>まで上昇することが示された。この値下げ幅によって生じる損失や費用と、上昇する選択確率による便益をどう捉えるのか、そしてどのような意思決定を行うのかは、企業の意思決定者に委ねられるべき問題である。しかしながら、既存の消費者行動データをきちんと蓄積、分析することで、実際に値下げを実行しなくても消費者の選択がどう変わりうるかを予測できることは実務的にも非常に有効な手段であるだろう。</p>
+<p>離散選択モデルは、プロビットモデルやロジットモデルを実行するための関数を用いて分析が可能である。しかしながら、引数の設定や出力される結果の解釈、ひいてはモデルそのものに内包されている理論的仮定について最低限の理論的知識が必要になる。そのため、本章では理論に関する説明も含め離散選択モデルについての紹介を行った。</p>
+<p>離散選択モデルには、ここで紹介した以外にも様々なタイプが存在する。たとえば、被説明変数が離散的であり大小関係を持つような変数（ランキング、アンケート尺度など）の場合、順序プロビット（Ordered probit）や順序ロジットモデルを用いることが多い。また、被説明変数が打ち切りデータである場合、トービットモデルを用いる。打ち切りデータとは、データの上限や下限があるようなデータであり、例えば株の保有額は保有していなければ 0（下限）で保有している際はその評価額をとるため、打ち切りデータだと考えられる。また、打ち切りデータであり、 0 の観測が著しく多い被説明変数の場合には、ポアソンモデルや負の二項分布モデルが用いられる。例えば、ある製品の購買頻度や購買量について（アンケートなどを用いて）広く消費者から情報を得る場合など、多くの消費者においては購買頻度が 0 であると考えられる。このようなデータを被説明変数とする場合にはポアソン分布や負の二項分布を想定したモデルを利用することが多い。紙幅の都合上これらの詳細は割愛するが、関心のある読者は計量経済学やマーケティング・サイエンスのテキストを参照してほしい。</p>
+<p>また、本章の前半に紹介した通り、このアプローチは「自身の好みを理解し、首尾一貫した選択を行う」ような消費者像を前提としている。この前提は多くの状況に当てはまるものだと思われるが、そうではない状況もあるだろう。ここで想定している前提が崩れるような状況や個人的特性に着目する場合、異なる世界観（理論や学術領域）に基づく研究が必要になる。そのため、自身の捉えている問いや状況がどのようなものであるかを明確化し、それに整合的な理論と手法を選んで研究を進めることが重要になる。</p>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="mlogit.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="Ch7Reference.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/USERNAME/REPO/edit/BRANCH/06-choicemodel.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection",
+    "scroll_highlight": true
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

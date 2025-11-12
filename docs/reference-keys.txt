@@ -3,3 +3,11 @@ tab:rolldice
 tab:llnsimulation
 fig:ztest
 tab:errortypes
+fig:lpm-plot
+fig:norm-cdf
+eq:probit
+eq:avgmarg1
+eq:avgmarg2
+eq:marg-dummy
+eq:llprobit
+eq:utility
