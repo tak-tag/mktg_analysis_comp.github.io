@@ -45,3 +45,6 @@ tab:widetolong
 fig:pmsscreeplot
 fig:pmcafe
 fig:cafeclusterplot
+fig:psmfigure
+fig:psmfig
+fig:NSMfig
