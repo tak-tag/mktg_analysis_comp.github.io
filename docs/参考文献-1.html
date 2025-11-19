@@ -22,14 +22,14 @@
 
 
 
-<meta name="date" content="2025-11-12" />
+<meta name="date" content="2025-11-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="需要の予測と本章のまとめ.html"/>
+<link rel="prev" href="rによるクラスター分析の実行.html"/>
 
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -261,23 +261,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="choice.html"><a href="choice.html"><i class="fa fa-check"></i>消費者の選択と離散選択モデル</a>
 <ul>
-<li class="chapter" data-level="" data-path=""><a href="#%E6%9C%AC%E7%AB%A0%E3%81%AE%E6%A6%82%E8%A6%81"><i class="fa fa-check"></i>本章の概要</a></li>
-<li class="chapter" data-level="" data-path="probability.html"><a href="probability.html#discrete"><i class="fa fa-check"></i>離散選択モデル</a>
+<li class="chapter" data-level="" data-path="Ch7Intro.html"><a href="Ch7Intro.html"><i class="fa fa-check"></i>本章の概要</a></li>
+<li class="chapter" data-level="" data-path="discretechoice.html"><a href="discretechoice.html"><i class="fa fa-check"></i>離散選択モデル</a>
 <ul>
-<li class="chapter" data-level="" data-path=""><a href="#%E7%B7%9A%E5%BD%A2%E7%A2%BA%E7%8E%87%E3%83%A2%E3%83%87%E3%83%AB"><i class="fa fa-check"></i>線形確率モデル</a></li>
-<li class="chapter" data-level="" data-path=""><a href="#%E3%83%97%E3%83%AD%E3%83%93%E3%83%83%E3%83%88%E3%83%A2%E3%83%87%E3%83%AB%E3%81%A8%E3%83%AD%E3%82%B8%E3%83%83%E3%83%88%E3%83%A2%E3%83%87%E3%83%AB"><i class="fa fa-check"></i>プロビットモデルとロジットモデル*</a></li>
-<li class="chapter" data-level="" data-path=""><a href="#%E6%BD%9C%E5%9C%A8%E5%A4%89%E6%95%B0%E3%82%A2%E3%83%97%E3%83%AD%E3%83%BC%E3%83%81%E3%81%AB%E3%82%88%E3%82%8B%E8%AA%AC%E6%98%8E"><i class="fa fa-check"></i>潜在変数アプローチによる説明*</a></li>
+<li class="chapter" data-level="" data-path="discretechoice.html"><a href="discretechoice.html#lpm"><i class="fa fa-check"></i>線形確率モデル</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#%E3%83%97%E3%83%AD%E3%83%93%E3%83%83%E3%83%88%E3%83%A2%E3%83%87%E3%83%AB%E3%81%A8%E3%83%AD%E3%82%B8%E3%83%83%E3%83%88%E3%83%A2%E3%83%87%E3%83%ABlogitprobit"><i class="fa fa-check"></i>プロビットモデルとロジットモデル*{#logitprobit}</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#%E6%BD%9C%E5%9C%A8%E5%A4%89%E6%95%B0%E3%82%A2%E3%83%97%E3%83%AD%E3%83%BC%E3%83%81%E3%81%AB%E3%82%88%E3%82%8B%E8%AA%AC%E6%98%8Elatentapproach"><i class="fa fa-check"></i>潜在変数アプローチによる説明*{#latentApproach}</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path=""><a href="#%E3%83%97%E3%83%AD%E3%83%93%E3%83%83%E3%83%88%E3%83%A2%E3%83%87%E3%83%AB%E3%81%AE%E6%8E%A8%E5%AE%9A%E3%81%A8%E8%A7%A3%E9%87%88"><i class="fa fa-check"></i>プロビットモデルの推定と解釈</a>
+<li class="chapter" data-level="" data-path="probitwithR.html"><a href="probitwithR.html"><i class="fa fa-check"></i>プロビットモデルの推定と解釈</a>
 <ul>
-<li class="chapter" data-level="" data-path=""><a href="#%E5%88%86%E6%9E%90%E3%81%AE%E5%AE%9F%E8%A1%8C%E3%81%A8%E7%B5%90%E6%9E%9C%E3%81%AE%E3%81%BE%E3%81%A8%E3%82%81"><i class="fa fa-check"></i>分析の実行と結果のまとめ</a></li>
-<li class="chapter" data-level="" data-path=""><a href="#%E9%99%90%E7%95%8C%E5%8A%B9%E6%9E%9C%E3%81%AE%E8%A8%88%E7%AE%97"><i class="fa fa-check"></i>限界効果の計算</a></li>
-<li class="chapter" data-level="" data-path=""><a href="#%E9%99%90%E7%95%8C%E5%8A%B9%E6%9E%9C%E3%81%8C%E3%81%AA%E3%81%9C%E5%BF%85%E8%A6%81%E3%81%8B"><i class="fa fa-check"></i>限界効果がなぜ必要か？*</a></li>
+<li class="chapter" data-level="" data-path="probitwithR.html"><a href="probitwithR.html#probitSummary"><i class="fa fa-check"></i>分析の実行と結果のまとめ</a></li>
+<li class="chapter" data-level="" data-path="probitwithR.html"><a href="probitwithR.html#marginaleffectwithR"><i class="fa fa-check"></i>限界効果の計算</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#%E9%99%90%E7%95%8C%E5%8A%B9%E6%9E%9C%E3%81%8C%E3%81%AA%E3%81%9C%E5%BF%85%E8%A6%81%E3%81%8Bwhymarginal"><i class="fa fa-check"></i>限界効果がなぜ必要か？*{#whymarginal}</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="ml.html"><a href="ml.html"><i class="fa fa-check"></i>補足：最尤推定法の紹介</a></li>
-<li class="chapter" data-level="" data-path=""><a href="#%E9%9B%A2%E6%95%A3%E9%81%B8%E6%8A%9E%E3%83%A2%E3%83%87%E3%83%AB%E3%81%B8%E3%81%AE%E5%90%88%E7%90%86%E7%9A%84%E6%B6%88%E8%B2%BB%E8%80%85%E5%83%8F%E3%81%AE%E5%BF%9C%E7%94%A8"><i class="fa fa-check"></i>離散選択モデルへの合理的消費者像の応用</a></li>
-<li class="chapter" data-level="" data-path=""><a href="#%E5%A4%9A%E9%A0%85%E9%81%B8%E6%8A%9E%E3%83%A2%E3%83%87%E3%83%AB%E7%B4%B9%E4%BB%8B"><i class="fa fa-check"></i>多項選択モデル紹介</a></li>
-<li class="chapter" data-level="" data-path=""><a href="#%E9%9C%80%E8%A6%81%E3%81%AE%E4%BA%88%E6%B8%AC%E3%81%A8%E6%9C%AC%E7%AB%A0%E3%81%AE%E3%81%BE%E3%81%A8%E3%82%81"><i class="fa fa-check"></i>需要の予測と本章のまとめ</a></li>
+<li class="chapter" data-level="" data-path="Mcfadden.html"><a href="Mcfadden.html"><i class="fa fa-check"></i>離散選択モデルへの合理的消費者像の応用</a></li>
+<li class="chapter" data-level="" data-path="mlogit.html"><a href="mlogit.html"><i class="fa fa-check"></i>多項選択モデル紹介</a></li>
+<li class="chapter" data-level="" data-path="choiceAndPrediction.html"><a href="choiceAndPrediction.html"><i class="fa fa-check"></i>需要の予測と本章のまとめ</a></li>
+<li class="chapter" data-level="" data-path="Ch7Reference.html"><a href="Ch7Reference.html"><i class="fa fa-check"></i>参考文献</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="cluster.html"><a href="cluster.html"><i class="fa fa-check"></i>セグメントとクラスター分析</a>
+<ul>
+<li class="chapter" data-level="" data-path=""><a href="#%E6%9C%AC%E7%AB%A0%E3%81%AE%E6%A6%82%E8%A6%81"><i class="fa fa-check"></i>本章の概要</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#%E3%82%BB%E3%82%B0%E3%83%A1%E3%83%B3%E3%83%86%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%81%AE%E5%AE%9F%E8%A1%8C%E3%81%A8%E3%82%AF%E3%83%A9%E3%82%B9%E3%82%BF%E3%83%BC%E5%88%86%E6%9E%90"><i class="fa fa-check"></i>セグメンテーションの実行とクラスター分析</a>
+<ul>
+<li class="chapter" data-level="" data-path="セグメンテーションの実行とクラスター分析.html"><a href="セグメンテーションの実行とクラスター分析.html"><i class="fa fa-check"></i>階層的クラスター分析</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="k-means.html"><a href="k-means.html"><i class="fa fa-check"></i>非階層的クラスター分析：K-means法</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#r%E3%81%AB%E3%82%88%E3%82%8B%E3%82%AF%E3%83%A9%E3%82%B9%E3%82%BF%E3%83%BC%E5%88%86%E6%9E%90%E3%81%AE%E5%AE%9F%E8%A1%8C"><i class="fa fa-check"></i>Rによるクラスター分析の実行</a></li>
 <li class="chapter" data-level="" data-path=""><a href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE-1"><i class="fa fa-check"></i>参考文献</a></li>
 </ul></li>
 </ul>
@@ -299,16 +310,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="参考文献-1" class="section level2 hasAnchor">
 <h2>参考文献<a href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>神取道宏（2014）「ミクロ経済学の力」，日本評論社.</p>
-<p>デビッドクレプス（2008）「MBAのためのミクロ経済学入門I価格と市場 中泉真樹他訳」，東洋経済新報社.</p>
-<p>照井信彦・佐藤忠彦（2022）「現代マーケティング・リサーチ 新版」, 有斐閣.</p>
-<p>西山慶彦・新谷元嗣・川口大司・奥井亮（2019）「計量経済学」，有斐閣.</p>
-<p>Adams, C., P. (2021) “Learning Microeconometrics with R,” CRC Press.</p>
-<p>Fernihough, A. (2019) “Marginal Effects for Generalized Linear Models: The mfx Package for R.”</p>
-<p>McFadden, D. (1974) “The Measurement of Urban Travel Demand,” Journal of Public Economics, 3, 303-328.</p>
+<p>Jobber, D., &amp; Ellis-Chadwick (2020). <em>Principles and Practices of Marketing 9th Edition</em>, McGraw-Hill Education.</p>
+<p>照井伸彦・佐藤忠彦（2022）「現代マーケティング・リサーチ[新版]」,有斐閣.</p>
 
 </div>
 <!-- </div> -->
+
 
 
 
@@ -341,7 +348,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="需要の予測と本章のまとめ.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="rによるクラスター分析の実行.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
     </div>
   </div>
@@ -373,7 +380,7 @@ gitbook.start({
     "size": 2
   },
   "edit": {
-    "link": "https://github.com/USERNAME/REPO/edit/BRANCH/06-choicemodel.Rmd",
+    "link": "https://github.com/USERNAME/REPO/edit/BRANCH/07-cluster.Rmd",
     "text": "Edit"
   },
   "history": {

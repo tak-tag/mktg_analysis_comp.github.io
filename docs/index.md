@@ -3,7 +3,7 @@ title: "マーケティング・データ分析補足資料"
 author: 
   - name: "田頭拓己"
     affiliation: "神戸大学大学院経営学研究科"
-date: "2025-11-12"
+date: "2025-11-19"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
