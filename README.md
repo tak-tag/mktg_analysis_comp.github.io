@@ -1,1 +1,1 @@
-# mkt_analysis_comp
+# [MktDataAnalysis](https://github.com/tak-tag/mktg_analysis_comp)
