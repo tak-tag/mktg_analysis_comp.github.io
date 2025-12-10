@@ -22,7 +22,7 @@
 
 
 
-<meta name="date" content="2025-11-19" />
+<meta name="date" content="2025-12-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -431,7 +431,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>##  [1]  2  4  6  8 10 12 14 16 18 20</code></pre>
 <p>特定の関数に対する引数を確認したい場合は ‘?関数名’とconsoleに命令することで確認が可能になる。例えば、seq関数について知りたければ、’?seq’ で確認できる。</p>
 <p>Rに元から含まれている関数以外にも他者が開発してくれた関数も存在する。そしていくつかの関数をまとめたpackagesが多数存在する。これまで世界中の開発者たちが作成したパッケージを公開してくれている。パッケージは何らかの目的や課題を達成することを目的に構成されたコードライブラリであり、それらをインストールし、各セッションごとに起動することで利用できる。</p>
-<p>CRAN（The Comprehensive R Archive Network、Rに関するコードとドキュメントを配布するサーバーネットワーク）で公開されているパッケージは、install.packages()でインストール可能である。また、Rstudio の場合、ペインからpackagesタブ<span class="math inline">\(\rightarrow\)</span>Install<span class="math inline">\(\rightarrow\)</span>パッケージ名の入力という手順でもインストールが可能である。そしてインストール済パッケージは、<code>library()</code> によって起動することで、活用可能にある。ここで注意しておきたいのは、library()によるパッケージの起動はセッションごとに実行しないといけないという点である。まずは以下の通り、本講義で用いる “tidyverse” パッケージをインストールし起動してみる。“tidyverse”は、複数のパッケージから構成されているパッケージであり、データの整形・分析を行うために役立つ複数のパッケージをまとめてインストール・起動できる。</p>
+<p>CRAN（The Comprehensive R Archive Network、Rに関するコードとドキュメントを配布するサーバーネットワーク）で公開されているパッケージは、install.packages()でインストール可能である。また、Rstudio の場合、ペインからpackagesタブ -&gt; Install -&gt; パッケージ名の入力という手順でもインストールが可能である。そしてインストール済パッケージは、<code>library()</code> によって起動することで、活用可能にある。ここで注意しておきたいのは、library()によるパッケージの起動はセッションごとに実行しないといけないという点である。まずは以下の通り、本講義で用いる “tidyverse” パッケージをインストールし起動してみる。“tidyverse”は、複数のパッケージから構成されているパッケージであり、データの整形・分析を行うために役立つ複数のパッケージをまとめてインストール・起動できる。</p>
 <div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="basics.html#cb44-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</span>
 <span id="cb44-2"><a href="basics.html#cb44-2" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;tidyverse&quot;</span>)</span></code></pre></div>
 </div>
