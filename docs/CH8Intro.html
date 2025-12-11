@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="factor.html"/>
-<link rel="next" href="faIntro.html"/>
+<link rel="prev" href="cluster.html"/>
+<link rel="next" href="segmentationClustering.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -297,7 +297,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="factor.html"><a href="factor.html"><i class="fa fa-check"></i>探索的因子分析と知覚マップ</a>
 <ul>
-<li class="chapter" data-level="" data-path="Ch8Intro.html"><a href="Ch8Intro.html"><i class="fa fa-check"></i>本章の概要</a></li>
+<li class="chapter" data-level="" data-path="CH9Intro.html"><a href="CH9Intro.html"><i class="fa fa-check"></i>本章の概要</a></li>
 <li class="chapter" data-level="" data-path="faIntro.html"><a href="faIntro.html"><i class="fa fa-check"></i>因子分析とは</a></li>
 <li class="chapter" data-level="" data-path="rotation.html"><a href="rotation.html"><i class="fa fa-check"></i>2因子モデルと軸の回転</a>
 <ul>
@@ -319,7 +319,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="psm.html"><a href="psm.html"><i class="fa fa-check"></i>価格感度測定 (PSM)</a>
 <ul>
-<li class="chapter" data-level="" data-path="Ch10Intro.html"><a href="Ch10Intro.html"><i class="fa fa-check"></i>本章の概要</a></li>
+<li class="chapter" data-level="" data-path="CH10Intro.html"><a href="CH10Intro.html"><i class="fa fa-check"></i>本章の概要</a></li>
 <li class="chapter" data-level="" data-path="psmrunning.html"><a href="psmrunning.html"><i class="fa fa-check"></i>PSMの実行と結果</a></li>
 <li class="chapter" data-level="" data-path="price_concept.html"><a href="price_concept.html"><i class="fa fa-check"></i>マーケティングにおける価格概念</a></li>
 <li class="chapter" data-level="" data-path="Accprice.html"><a href="Accprice.html"><i class="fa fa-check"></i>受容価格帯と内的参照価格帯の応用とPSM</a></li>
@@ -343,29 +343,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="Ch8Intro" class="section level2 hasAnchor">
-<h2>本章の概要<a href="Ch8Intro.html#Ch8Intro" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>マーケティングや消費者行動研究領域では、心理尺度を用いて消費者の状態や反応を調査することが重要である心理尺度に関する基本的な考え方や尺度例については田頭（2025）を参照してほしい。調査者の立場に立てば、「自身が採用する心理尺度がきちんと想定している概念を捉えているのか」や、「一つの概念を捉えるために用意された複数の項目はきちんとまとまるのか」といった疑問に対して、データを用いて対応したいと考えることもあるだろう。このときに用いる手法が因子分析である。</p>
-<p>本章では、探索的因子分析と呼ばれる分析手法について紹介する<a href="#fn22" class="footnote-ref" id="fnref22"><sup>22</sup></a>。そのうえで、ここでは主に二種類の因子分析の利用方法について紹介する。第一に、因子分析の最も基本的かつ一般的な方法で、心理尺度の構成やまとまりを検討することを目的とした方法である。第二は、マーケティングにおけるポジショニングについて検討するための因子分析の応用について説明する。この方法は実務的なマーケティングリサーチ法の一環で紹介される方法である。</p>
-<p>心理尺度を構成する際には、各項目がその背後に想定している概念をきちんと捉えているかを検討することが重要である。その検討においては、概念的な議論に加え、統計的な分析により確認することが求められる。因子分析は、尺度の全体的な構造を統計的に検討するための手法として使われる。本章は、このような因子分析の基本的特徴を踏まえつつ、マーケティングへの応用についても紹介することを目的とする。なお、ここではRを用いた因子分析の実行に焦点を合わせるため、因子分析の基本や統計的な議論については別途テキストを参照してほしい。そのうえで本章では特に以下の三点について注意しながら説明する。</p>
-<p>第一に、複数の因子を想定する場合の因子分析法について、二因子モデルを例に取り説明する。ここでは複数の因子を想定する際に特に注意が必要となる因子軸の回転と、因子数の決定について説明する。因子分析では、解釈が容易になるよう（単純構造化するために）軸の回転というテクニックが用いられる。ここでいう単純構造とは各変数が1つの因子だけから強い影響を受け、他の因子からの影響が0に近くなるように見える構造を意味している。本章では、これらのアプローチについて紹介する。</p>
-<p>第二に、因子数の決定に関する判断について説明する。因子数の決定では、各因子の固有値を用いた判断基準を紹介する。因子分析を用いた研究では固有値が1以上の因子をモデルに含めるという基準が慣習として採用される。固有値は直感的には、項目何個分の情報量を因子が有しているかを意味する。これに加え、因子数と固有値との関係を図示化したスクリープロットも活用することが一般的である。これにより、因子数を増やすことによる固有値の変化量にも着目し、著しく固有値が下がっている項目については除外するなどの判断に活用される。</p>
-<p>第三に、因子分析の応用先として本章が着目するポジショニングと知覚マップを説明する。ポジショニングとは、セグメンテーションとターゲティングの後、企業の製品や提供物を決定し、市場において特有のポジションを専有するための過程である。しかしながら自社の戦略とそれに準ずる製品属性を決定したからと言って、それが自動的に企業のポジションを約束するわけではない。ポジションの確立には、消費者がどのように知覚するかが重要になる。そのため、消費者の知覚や評価に基づき、ポジショニングを理解する事が重要になる。</p>
-<p>最後に、消費者に回答してもらったアンケートデータをもとに因子分析を行い知覚マップを作成する方法を紹介する。多くのテキスト等で紹介、共有されている知覚マップの作成方法やそこで利用されているデータは、すでに企業レベルで集計されている事が多い。しかしながら、各消費者が回答したアンケートデータセットと、企業レベルでのポジションを示すための知覚マップ用のデータセットではデータの構造が異なる。本章では、このようなデータ構造の変換も含めて、実践的な分析手法について紹介する。</p>
-</div>
-<div class="footnotes">
-<hr />
-<ol start="22">
-<li id="fn22"><p>因子分析には、確認的因子分析（Confirmatory Factor Analysis）という手法も存在する。確認的因子分析は、探索的因子分析や先行研究などに基づき、因子の数と因子負荷量について仮説的な構造を想定し、その構造をデータに基づき検証する方法である。本書では省略するが、学術的な研究では広く採用されている手法であるため、川端ほか（2019）などを参照してほしい。<a href="Ch8Intro.html#fnref22" class="footnote-back">↩︎</a></p></li>
-</ol>
+<div id="CH8Intro" class="section level2 hasAnchor">
+<h2>本章の概要<a href="CH8Intro.html#CH8Intro" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>本書ではこれまで、統計的な推定や検定を用いて仮説を検証する方法を説明してきた。しかしながら、マーケティングでは、データを探索的に分析することで洞察を得ることへの関心も高まっている。データ分析のアプローチにおいても、検証のようなプロセスを経ずに、データの持つ情報を集約・整理することで探索的に分析結果を得るものが存在する。このような探索的なデータ分析手法として、マーケティング領域で広く使われているものに、クラスター分析がある。</p>
+<p>クラスター分析は、複数の量的変数情報に基づいて、データのサンプルをいくつかのグループに分類する方法である。この手法は、「セグメンテーション」というマーケティング実務的枠組みと関連している。マーケティングの基本的な戦略方針として、セグメンテーション、ターゲティング、ポジショニングがある。これは、市場を構成する消費者を細分化し、標的とするグループを特定化したうえで、具体的なマーケティング要素をそのグループに合わせて調整することで、市場におけるポジションを確立するという、実務的方針である。しかしながら人間が自身の認知能力によって数多く存在する消費者の中からセグメントを発見・弁別するのは容易ではない。</p>
+<p>このような限界を克服するため、消費者に関する情報を集めたデータセットを用いて、消費者間の類似性をもとにグループ分けを行うことに活用できるデータ分析手法がクラスター分析である。クラスター分析では、回帰分析のように着目する目的変数を用いず、入力されたデータそのものに着目する。このようなアプローチでは、分析者の判断が重要な役割を担う。そのため、本章では、クラスター分析の実行方法に加え、分析手法そのものの概要についても理解することを目的とする。</p>
+<p>この目的を達成するために、本章では、主なクラスター分析アプローチとして、階層的クラスター分析と非階層的クラスター分析（K-means法）を紹介する。階層的クラスター分析はデータの中から類似している観測値を段階的にクラスター（観測値の集団）としてまとめていき、最終的にすべてのデータが1つのクラスターになるまでそれを繰り返す方法である。この方法では、観測値同士の類似性（距離）やクラスター同士の類似性に基づき似たものから順にまとめていく。階層的クラスター分析では、デンドログラムと呼ばれる樹形図のような図が主な結果として出力され、この結果をもとに、研究者がいくつのクラスター数でこのデータをまとめ上げることが良いのかを判断する。</p>
+<p>しかしながら、いくつのクラスター数が良いのかという点については、多くの場合研究者が分類結果の「効率性」と「有効性」のバランスから判断することになる。効率性は分類によってどれだけ多くの情報を集約し説明できているかを表しており、より少ないクラスター数で多くのデータを説明できたほうが情報の集約による効率性が高いと考えられる。しかしながら、得たクラスター分類が役に立たないと意味がない。そこで、分類結果がどの程度現実的な含意につながるかを捉えたのが有効性である。効率性を意識しすぎて少ないクラスター数による分類を採用しても、あまりに大雑把過ぎる分類だと分析結果が有益にならないため、ある程度クラスター数を増やしたほうが有効な分類になるかもしれない。クラスター分析では、これらの基準によっていくつのクラスター数でデータをまとめ上げることが好ましいのかを研究者自身が判断することになる。</p>
+<p>非階層的クラスター分析は、階層的クラスター分析などによってクラスター数の目ぼしをつけた後に実行することが一般的である。それは、非階層的クラスター分析を実行するためには、研究者が事前にクラスター数を指定することが必要なためである。そのため、非階層的クラスター分析に加え、エルボー法などの手法を併用し、クラスター数を決定すること多い。そのうえで非階層的クラスター分析では、指定されたクラスター数を所与として、各観測に対してクラスターを割り当てる計算・分析が実行される。その際、似た（距離の近い）観測同士は同じクラスターに、似ていない観測同士は違うクラスターに割り当てられ、全ての観測データがどれか一つのクラスターに所属するような結果を得る。その割り当て結果を用いて、各クラスターの特徴を確認することが可能になる。</p>
+<p>クラスター分析の概要を説明したあとは、Rを用いた分析手法を紹介する。本書では、吉田秀雄記念事業財団によって2023年に実施され、オンライン上に公開されている消費者調査アンケートデータを用いて消費者クラスターを発見することを試みる。ここでは、クラスター分析の実行に関するコードに加え、プレゼンテーション等で活用できる図示化の方法についても紹介する。</p>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="factor.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="faIntro.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="cluster.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="segmentationClustering.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -396,7 +390,7 @@ gitbook.start({
     "size": 2
   },
   "edit": {
-    "link": "https://github.com/USERNAME/REPO/edit/BRANCH/08-positioning.Rmd",
+    "link": "https://github.com/USERNAME/REPO/edit/BRANCH/07-cluster.Rmd",
     "text": "Edit"
   },
   "history": {
