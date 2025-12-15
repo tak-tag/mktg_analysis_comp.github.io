@@ -60,7 +60,7 @@ ch2summary
 positcloud
 ch2reference
 handling
-Ch3intro
+ch3intro
 readData
 normalization
 tidyverse-の活用
@@ -136,7 +136,7 @@ logLinearwithR
 linearTest
 ch6Reference
 choice
-Ch7Intro
+ch7Intro
 discretechoice
 lpm
 プロビットモデルとロジットモデルlogitprobit
@@ -149,16 +149,16 @@ ml
 Mcfadden
 mlogit
 choiceAndPrediction
-Ch7Reference
+ch7Reference
 cluster
-CH8Intro
+ch8Intro
 segmentationClustering
 Hier
 k-means
 ClusteringwithR
 CH8Reference
 factor
-CH9Intro
+ch9Intro
 faIntro
 rotation
 NofFactors
@@ -170,7 +170,7 @@ faex
 fawithCafedata
 faDatahandling
 因子分析の実行
-Ch9Reference
+ch9Reference
 psm
 ch10Intro
 psmrunning
