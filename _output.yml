@@ -1,7 +1,7 @@
 bookdown::gitbook:
   split_by: section
   css: style.css
-  number_sections: false
+  number_sections: true
   config:
     toc:
       collapse: subsection
